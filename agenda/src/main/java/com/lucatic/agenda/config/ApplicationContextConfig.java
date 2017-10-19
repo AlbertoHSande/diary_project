@@ -58,11 +58,11 @@ public class ApplicationContextConfig {
 //	public SessionFactory getSessionFactory(DataSource dataSource) {
 //		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 //		sessionBuilder.addProperties(getHibernateProperties());
-//		//Nuestra clase agenta
+//		//Nuestra clase agenda
 //		sessionBuilder.addAnnotatedClasses(Agenda.class);
 //		return sessionBuilder.buildSessionFactory();
 //	}
-
+/*
 	@Autowired
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(
@@ -71,7 +71,7 @@ public class ApplicationContextConfig {
 				sessionFactory);
 
 		return transactionManager;
-	}
+	}*/
 
 
 }
