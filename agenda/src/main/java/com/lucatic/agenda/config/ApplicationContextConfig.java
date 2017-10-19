@@ -63,7 +63,7 @@ public class ApplicationContextConfig {
 //		return sessionBuilder.buildSessionFactory();
 //	}
 
-	@Autowired
+/*	@Autowired
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(
 			SessionFactory sessionFactory) {
@@ -71,7 +71,7 @@ public class ApplicationContextConfig {
 				sessionFactory);
 
 		return transactionManager;
-	}
+	}*/
 
 
 }
