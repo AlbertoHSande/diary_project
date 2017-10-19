@@ -80,7 +80,6 @@ public class DAOPersona implements IDAO<Persona,String> {
 	}
 
 	
-	
 	@Override
 	@Transactional
 	public int insert(Persona ov) {
