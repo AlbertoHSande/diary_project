@@ -19,8 +19,8 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 	//	List<User> listUsers = userService.list();
-		ModelAndView model = new ModelAndView("UserList");
-		model.addObject("userList");
+		ModelAndView model = new ModelAndView("user");
+		model.addObject("user");
 		return model;
 	}
 	

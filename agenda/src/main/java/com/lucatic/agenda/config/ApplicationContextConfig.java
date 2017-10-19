@@ -46,13 +46,13 @@ public class ApplicationContextConfig {
 	}
 
 
-	private Properties getHibernateProperties() {
+/*	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		return properties;
 	}
-
+*/
 //	@Autowired
 //	@Bean(name = "sessionFactory")
 //	public SessionFactory getSessionFactory(DataSource dataSource) {
