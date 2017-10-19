@@ -79,6 +79,8 @@ public class DAOPersona implements IDAO<Persona,String> {
 		return 0;
 	}
 
+	
+	
 	@Override
 	@Transactional
 	public int insert(Persona ov) {
