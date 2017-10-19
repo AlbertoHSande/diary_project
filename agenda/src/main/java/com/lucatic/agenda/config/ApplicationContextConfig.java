@@ -46,24 +46,24 @@ public class ApplicationContextConfig {
 	}
 
 
-	private Properties getHibernateProperties() {
+/*	private Properties getHibernateProperties() {
 		Properties properties = new Properties();
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 		return properties;
 	}
-
+*/
 //	@Autowired
 //	@Bean(name = "sessionFactory")
 //	public SessionFactory getSessionFactory(DataSource dataSource) {
 //		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 //		sessionBuilder.addProperties(getHibernateProperties());
-//		//Nuestra clase agenda
+//		//Nuestra clase agenta
 //		sessionBuilder.addAnnotatedClasses(Agenda.class);
 //		return sessionBuilder.buildSessionFactory();
 //	}
-/*
-	@Autowired
+
+/*	@Autowired
 	@Bean(name = "transactionManager")
 	public HibernateTransactionManager getTransactionManager(
 			SessionFactory sessionFactory) {
