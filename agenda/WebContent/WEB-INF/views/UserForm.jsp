@@ -21,30 +21,6 @@
 <title>FORMULARIO DE USUARIOS</title>
 </head>
 <body>
-	<div align="center">
-		<h1>FORMULARIO DE USUARIOS (add/edit)</h1>
-		<table>
-			<form:form action="save" method="post" modelAttribute="user">
-				<form:hidden path="id" />
-				<tr>
-					<td>Usuario:</td>
-					<td><form:input path="username" /></td>
-				</tr>
-				<tr>
-					<td>Email:</td>
-					<td><form:input path="email" /></td>
-				</tr>
-				<tr>
-					<td>Password:</td>
-					<td><form:password path="password" /></td>
-				</tr>
-				<tr>
-					<td colspan="2" align="center"><input type="submit"
-						value="Guardar Registro"></td>
-				</tr>
-			</form:form>
-		</table>
-	</div>
-
+	
 </body>
 </html>
