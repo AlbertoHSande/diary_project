@@ -26,8 +26,8 @@ public class HomeController {
 	public ModelAndView handleRequest() throws Exception {
 		//Falta userService
 		List<Persona> personas = PersonaService.list();
-		ModelAndView model = new ModelAndView("Hola");
-		model.addObject("Hola", personas);
+		ModelAndView model = new ModelAndView("Index");
+		model.addObject("Index", personas);
 		return model;
 	}
 	
