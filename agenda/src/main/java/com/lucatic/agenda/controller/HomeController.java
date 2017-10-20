@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lucatic.agenda.dao.DAOPersona;
 import com.lucatic.agenda.model.Persona;
-import com.lucatic.agenda.model.Personas;
+import com.lucatic.agenda.model.Persona;
 
 
 
@@ -24,7 +24,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 		//Falta userService
-		List<Personas> listper = daoPersona.findAll();
+		List<Persona> listper = daoPersona.findAll();
 		ModelAndView model = new ModelAndView("Hola");
 		model.addObject("Hola", listper);
 		model.addObject("Hola");

@@ -10,12 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.lucatic.agenda.model.Personas;
+import com.lucatic.agenda.model.Persona;
+
 
 //utilizamos repository para los DAOS
 @Repository
 
-public class DAOPersona implements IDAO<Personas,String> {
+public class DAOPersona implements IDAO<Persona,String> {
 
 	//Inyeccion automatica de dependencias
 	@Autowired
@@ -32,18 +33,18 @@ public class DAOPersona implements IDAO<Personas,String> {
 
 	@Override
 	//poner en las implementaciones de las interfaces
-	@Transactional
-	public Personas findById(String key) {
+	//@Transactional
+	public Persona findById(String key) {
 
-		Personas p=null;
+		Persona p=null;
 		String hq1 ="FROM personas WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
-
+		@SuppressWarnings("unchecked")
 		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
 		for (Object[] row : list) {
-			p= new Personas();
+			p= new Persona();
 			p.setIdpersonas((int) row[0]);
 			p.setNombre((String) row[1]);
 			p.setApellido1((String) row[2]);
@@ -58,40 +59,22 @@ public class DAOPersona implements IDAO<Personas,String> {
 	}
 
 	@Override
-	@Transactional
-	public List<Personas> findAll() {
+	//@Transactional
+	public List<Persona> findAll() {
 
 
 		@SuppressWarnings("unchecked")
-		List<Personas> listp = (List<Personas>) sessionFactory.getCurrentSession()
-		.createCriteria(Personas.class)
+		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
+		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return listp;
 
 	}
 
-	@Override
-	public int delete(Personas ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int insert(Personas ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update(Personas ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	/*	@Override
+	//@Override
 	@Transactional
-	public List<Personas> findAll() {
+	public List<Persona> list() {
 
 
 		@SuppressWarnings("unchecked")
@@ -118,7 +101,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 
 		String hq1 ="INSERT INTO usuario(nombre, apellido1, apellido2, dni, fechaNacimiento) VALUES ('"
 				+ ov.getNombre() + "','" + ov.getApellido1() + "','" + ov.getApellido2() + "','" + ov.getDni() + "','"
-				+ ov.getFecha() +"')";
+				+ ov.getFechaNacimiento() +"')";
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 
@@ -130,5 +113,5 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		sessionFactory.getCurrentSession().saveOrUpdate(ov);
 		return 0;
 	}
-	 */
+	 
 }
