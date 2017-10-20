@@ -11,16 +11,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lucatic.agenda.dao.DAOPersona;
+import com.lucatic.agenda.model.Persona;
+import com.lucatic.agenda.model.Personas;
+
 
 
 @Controller
 public class HomeController {
-	
+	@Autowired
+	private DAOPersona daoPersona;
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
-	//	List<User> listUsers = userService.list();
-		ModelAndView model = new ModelAndView("user");
-		model.addObject("user");
+		//Falta userService
+		List<Personas> listper = daoPersona.findAll();
+		ModelAndView model = new ModelAndView("Hola");
+		model.addObject("Hola", listper);
+		model.addObject("Hola");
 		return model;
 	}
 	
