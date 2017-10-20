@@ -33,7 +33,7 @@ public class DAOPersona implements IDAO<Persona,String> {
 
 	@Override
 	//poner en las implementaciones de las interfaces
-	//@Transactional
+	@Transactional
 	public Persona findById(String key) {
 
 		Persona p=null;
@@ -59,7 +59,7 @@ public class DAOPersona implements IDAO<Persona,String> {
 	}
 
 	@Override
-	//@Transactional
+	@Transactional
 	public List<Persona> findAll() {
 
 
@@ -73,7 +73,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 	}
 
 	//@Override
-	//@Transactional
+	@Transactional
 	public List<Persona> list() {
 
 
