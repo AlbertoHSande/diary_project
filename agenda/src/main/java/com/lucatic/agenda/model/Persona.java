@@ -21,7 +21,7 @@ public class Persona implements Serializable {
 	@Column(name = "idpersonas")
 	private int id;
 
-	private Set<Telefono> telefonos;
+	//private Set<Telefono> telefonos;
 	
 	private String nombre;
 	private String apellido1;
