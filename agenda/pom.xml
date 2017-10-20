@@ -5,11 +5,12 @@
 
 	<groupId>com.lucatic.agenda</groupId>
 	<artifactId>agenda</artifactId>
+	<name>agenda</name>
+	<description>Agenda corporativa</description>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>agenda</name>
-	<description>Agenda corporativa</description>
+	
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
