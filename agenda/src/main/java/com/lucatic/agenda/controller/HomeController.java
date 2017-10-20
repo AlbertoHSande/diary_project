@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lucatic.agenda.model.Persona;
+
 
 
 @Controller
@@ -18,9 +20,11 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
-	//	List<User> listUsers = userService.list();
-		ModelAndView model = new ModelAndView("user");
-		model.addObject("user");
+		//Falta userService
+		//List<Persona> listper = userService.list();
+		//model.addObject("Hola", listper);
+		ModelAndView model = new ModelAndView("Hola");
+		model.addObject("Hola");
 		return model;
 	}
 	
