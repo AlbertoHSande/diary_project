@@ -13,7 +13,7 @@
 			<th>Acciones</th>
 		</tr>
 
-		<c:forEach var="persona" items="${listp}" varStatus="status">
+<%-- 		<c:forEach var="persona" items="${listp}" varStatus="status">
 			<tr>
 				<td>${status.index + 1}</td>
 				<td>${personas.nombre}</td>
@@ -22,7 +22,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${personas.idpersonas}">Eliminar</a>
 				</td>
 			</tr>
-		</c:forEach>
+		</c:forEach> --%>
 	</table>
 </body>
 </html>

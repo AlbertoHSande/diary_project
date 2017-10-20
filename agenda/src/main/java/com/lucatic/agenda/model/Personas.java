@@ -20,7 +20,6 @@ private int idEmpleado;
 @Id
 @GeneratedValue
 @Column(name = "idpersonas")
-
 public int getIdpersonas() {
 	return idpersonas;
 }

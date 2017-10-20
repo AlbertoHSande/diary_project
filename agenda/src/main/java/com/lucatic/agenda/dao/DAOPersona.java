@@ -15,7 +15,7 @@ import com.lucatic.agenda.model.Personas;
 //utilizamos repository para los DAOS
 @Repository
 
-public class DAOPersona implements IDAO<Personas,String> {
+public class DAOPersona implements IDAO<Personas,Integer> {
 
 	//Inyeccion automatica de dependencias
 	@Autowired
@@ -32,8 +32,8 @@ public class DAOPersona implements IDAO<Personas,String> {
 
 	@Override
 	//poner en las implementaciones de las interfaces
-	@Transactional
-	public Personas findById(String key) {
+	//@Transactional
+	public Personas findById(Integer key) {
 
 		Personas p=null;
 		String hq1 ="FROM personas WHERE id="+key;
@@ -58,7 +58,7 @@ public class DAOPersona implements IDAO<Personas,String> {
 	}
 
 	@Override
-	@Transactional
+	//@Transactional
 	public List<Personas> findAll() {
 
 

@@ -19,20 +19,21 @@ import com.lucatic.agenda.model.Personas;
 
 @Controller
 public class HomeController {
+	
 	@Autowired
 	private DAOPersona daoPersona;
+	
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 		//Falta userService
 		List<Personas> listper = daoPersona.findAll();
 		ModelAndView model = new ModelAndView("Hola");
 		model.addObject("Hola", listper);
-		model.addObject("Hola");
 		return model;
 	}
 	
 //	@Autowired
-//	private UserService userService;
+//private UserService userService;
 /*
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
