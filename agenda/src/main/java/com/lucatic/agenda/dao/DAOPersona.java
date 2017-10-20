@@ -92,7 +92,7 @@ public class DAOPersona implements IDAOPersona {
 
 	@Override
 	public int delete(Persona ov) {
-		sessionFactory.getCurrentSession().delete(ov.getNombre());
+		sessionFactory.getCurrentSession().delete(ov.getId());
 		return 0;
 	}
 
