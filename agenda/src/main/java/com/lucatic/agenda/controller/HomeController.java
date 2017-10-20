@@ -27,7 +27,7 @@ public class HomeController {
 		//Falta userService
 		List<Persona> persona = PersonaService.list();
 		ModelAndView model = new ModelAndView("Hola");
-		model.addObject("Hola", persona);
+		model.addObject("persona", persona);
 		return model;
 	}
 	
