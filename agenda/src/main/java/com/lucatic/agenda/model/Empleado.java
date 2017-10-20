@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="empleados")
-public class Empleado implements Serializable {
+public class Empleado extends Persona implements Serializable {
 	
 	/**
 	 * 

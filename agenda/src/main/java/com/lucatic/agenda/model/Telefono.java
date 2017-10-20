@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,7 +25,7 @@ public class Telefono implements Serializable {
 	@Column(name = "telefonos")
 	private String telefono;
 
-	private int idPersona;
+	private Persona persona;
 
 	public Telefono() {
 		super();
@@ -50,12 +52,15 @@ public class Telefono implements Serializable {
 		this.telefono = telefono;
 	}
 
-	public int getIdPersona() {
-		return idPersona;
+
+	@ManyToOne
+	@JoinColumn(name="idPersona", nullable=false)
+	public Persona getPersona() {
+		return persona;
 	}
 
-	public void setIdPersona(int idPersona) {
-		this.idPersona = idPersona;
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 
 	@Override
@@ -85,7 +90,7 @@ public class Telefono implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Telefono [id=" + id + ", telefono=" + telefono + ", idPersona=" + idPersona + "]";
+		return "Telefono [id=" + id + ", telefono=" + telefono + ", idPersona=" + persona.toString() + "]";
 	}
 
 }
