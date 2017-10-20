@@ -67,6 +67,7 @@ public class DAOPersona implements IDAOPersona {
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+System.out.println(listp.toString());
 		return listp;
 
 	}

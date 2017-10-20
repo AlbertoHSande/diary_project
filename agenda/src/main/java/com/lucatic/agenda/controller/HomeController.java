@@ -25,9 +25,9 @@ public class HomeController {
 	@RequestMapping("/")
 	public ModelAndView handleRequest() throws Exception {
 		//Falta userService
-		List<Persona> personas = PersonaService.list();
-		ModelAndView model = new ModelAndView("Index");
-		model.addObject("Index", personas);
+		List<Persona> persona = PersonaService.list();
+		ModelAndView model = new ModelAndView("Hola");
+		model.addObject("persona", persona);
 		return model;
 	}
 	
