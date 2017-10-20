@@ -13,12 +13,12 @@
 			<th>Acciones</th>
 		</tr>
 
-		<c:forEach var="persona" items="${listp}" varStatus="status">
+		<c:forEach var="persona" items="${personas}" varStatus="status">
 			<tr>
 				<td>${status.index + 1}</td>
-				<td>${personas.nombre}</td>
-				<td>${personas.apellido}</td>
-				<td><a href="edit?id=${personas.id}">Modificar</a>
+				<td>${persona.nombre}</td>
+				<td>${persona.apellido1}</td>
+				<td><a href="edit?id=${persona.id}">Modificar</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${personas.idpersonas}">Eliminar</a>
 				</td>
 			</tr>
