@@ -15,7 +15,7 @@ import com.lucatic.agenda.model.Persona;
 //utilizamos repository para los DAOS
 @Repository
 
-public class DAOPersona implements IDAO<Persona,String> {
+public class DAOPersona implements IDAOPersona {
 
 	//Inyeccion automatica de dependencias
 	@Autowired
@@ -70,7 +70,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return listp;
 
 	}
-
+/*
 	@Override
 	public int delete(Persona ov) {
 		// TODO Auto-generated method stub
@@ -87,7 +87,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 	public int update(Persona ov) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
+	}*/
 
 	/*	@Override
 	@Transactional
