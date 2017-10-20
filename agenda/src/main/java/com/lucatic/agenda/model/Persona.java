@@ -27,7 +27,7 @@ public class Persona implements Serializable {
 	private String apellido1;
 	private String apellido2;
 	private String dni;
-	private Date fechaNacimiento;
+	private String fechaNacimiento;
 	private int idEmpleado;
 	
 	public Persona() {
@@ -81,12 +81,12 @@ public class Persona implements Serializable {
 		this.dni = dni;
 	}
 
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFechaNacimiento(String row) {
+		this.fechaNacimiento = row;
 	}
 
 	public int getIdEmpleado() {

@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import com.lucatic.agenda.model.Personas;
+import com.lucatic.agenda.model.Persona;
 
 
 
@@ -61,7 +61,7 @@ public class ApplicationContextConfig {
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		//Nuestra clase agenta
-		sessionBuilder.addAnnotatedClasses(Personas.class);
+		sessionBuilder.addAnnotatedClasses(Persona.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 
