@@ -61,55 +61,13 @@ public class DAOPersona implements IDAOPersona {
 	@Transactional
 	public List<Persona> findAll() {
 
-
+		//FUNCIONA MUESTRA INFO DE LA TABLA PERSONASSSSSSSSSSSSSSSSSSSSSSSSS
 		@SuppressWarnings("unchecked")
 		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-System.out.println(listp.toString());
 		return listp;
 
-	}
-/*
-	@Override
-	public int delete(Persona ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int insert(Persona ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update(Persona ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}*/
-
-	/*	@Override
-	@Transactional
-	public List<Personas> findAll() {
-
-
-		@SuppressWarnings("unchecked")
-		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
-		.createCriteria(Persona.class)
-		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
-		return listp;
-
-	}
-
-	@Override
-	@Transactional
-	public int delete(Persona ov) {
-		//cruzar los dedos para que funcione
-		sessionFactory.getCurrentSession().delete(ov.getIdpersonas());
-		return 0;
 	}
 
 
@@ -119,7 +77,7 @@ System.out.println(listp.toString());
 
 		String hq1 ="INSERT INTO usuario(nombre, apellido1, apellido2, dni, fechaNacimiento) VALUES ('"
 				+ ov.getNombre() + "','" + ov.getApellido1() + "','" + ov.getApellido2() + "','" + ov.getDni() + "','"
-				+ ov.getFecha() +"')";
+				+ ov.getFechaNacimiento() +"')";
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 
@@ -131,5 +89,14 @@ System.out.println(listp.toString());
 		sessionFactory.getCurrentSession().saveOrUpdate(ov);
 		return 0;
 	}
-	 */
+
+	@Override
+	public int delete(Persona ov) {
+		sessionFactory.getCurrentSession().delete(ov.getNombre());
+		return 0;
+	}
+
+
+
+	 
 }
