@@ -12,11 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lucatic.agenda.model.Persona;
 
-
 //utilizamos repository para los DAOS
 @Repository
 
-public class DAOPersona implements IDAO<Persona,String> {
+public class DAOPersona implements IDAOPersona {
 
 	//Inyeccion automatica de dependencias
 	@Autowired
@@ -39,13 +38,13 @@ public class DAOPersona implements IDAO<Persona,String> {
 		Persona p=null;
 		String hq1 ="FROM personas WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
-		@SuppressWarnings("unchecked")
+
 		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
 		for (Object[] row : list) {
 			p= new Persona();
-			p.setIdpersonas((int) row[0]);
+			p.setId((int) row[0]);
 			p.setNombre((String) row[1]);
 			p.setApellido1((String) row[2]);
 			p.setApellido2((String) row[3]);
@@ -71,10 +70,28 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return listp;
 
 	}
+/*
+	@Override
+	public int delete(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-	//@Override
+	@Override
+	public int insert(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}*/
+
+	/*	@Override
 	@Transactional
-	public List<Persona> list() {
+	public List<Personas> findAll() {
 
 
 		@SuppressWarnings("unchecked")
@@ -101,7 +118,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 
 		String hq1 ="INSERT INTO usuario(nombre, apellido1, apellido2, dni, fechaNacimiento) VALUES ('"
 				+ ov.getNombre() + "','" + ov.getApellido1() + "','" + ov.getApellido2() + "','" + ov.getDni() + "','"
-				+ ov.getFechaNacimiento() +"')";
+				+ ov.getFecha() +"')";
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 
@@ -113,5 +130,5 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		sessionFactory.getCurrentSession().saveOrUpdate(ov);
 		return 0;
 	}
-	 
+	 */
 }
