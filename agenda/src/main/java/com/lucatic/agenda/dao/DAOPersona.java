@@ -1,4 +1,4 @@
-package com.lucatic.agenda.dao;
+/*package com.lucatic.agenda.dao;
 
 import java.sql.ResultSet;
 import java.util.List;
@@ -100,3 +100,4 @@ public class DAOPersona implements IDAO<Persona,String> {
 	}
 
 }
+*/

@@ -1,4 +1,4 @@
-package com.lucatic.agenda.dao;
+/*package com.lucatic.agenda.dao;
 
 import java.util.List;
 
@@ -40,3 +40,4 @@ public class DAOAgenda extends IDAO <Agenda,String>{
 	
 
 }
+*/
