@@ -73,7 +73,7 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 	}
 
 	//@Override
-	@Transactional
+	//@Transactional
 	public List<Persona> list() {
 
 
