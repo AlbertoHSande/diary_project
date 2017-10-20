@@ -14,7 +14,6 @@ import com.lucatic.agenda.model.Personas;
 
 //utilizamos repository para los DAOS
 @Repository
-
 public class DAOPersona implements IDAO<Personas,Integer> {
 
 	//Inyeccion automatica de dependencias
@@ -32,7 +31,6 @@ public class DAOPersona implements IDAO<Personas,Integer> {
 
 	@Override
 	//poner en las implementaciones de las interfaces
-	//@Transactional
 	public Personas findById(Integer key) {
 
 		Personas p=null;
@@ -58,11 +56,11 @@ public class DAOPersona implements IDAO<Personas,Integer> {
 	}
 
 	@Override
-	//@Transactional
+//	@Transactional
 	public List<Personas> findAll() {
 
 
-		@SuppressWarnings("unchecked")
+		//@SuppressWarnings("unchecked")
 		List<Personas> listp = (List<Personas>) sessionFactory.getCurrentSession()
 		.createCriteria(Personas.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
@@ -72,18 +70,21 @@ System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 	}
 
 	@Override
+	@Transactional
 	public int delete(Personas ov) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
+	@Transactional
 	public int insert(Personas ov) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
+	@Transactional
 	public int update(Personas ov) {
 		// TODO Auto-generated method stub
 		return 0;
