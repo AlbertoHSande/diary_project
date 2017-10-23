@@ -4,51 +4,63 @@
 <html lang="en">
 
 <head>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <meta charset="UTF-8">
-    <title>Detalle Persona</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+<title>Detalle Persona</title>
 </head>
 
 <body>
-    <main>
-        <h1 align="center">Detalle Personal</h1>
-        <section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="container">
-                <div class="row" >
-                    <h2>Datos Personales</h2>
-                    <table>
-                        <tr>
-                            <th>
-                                <strong>NOMBRE:</strong> </th>
-                            <td>
-                            //------------------------
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <strong>APELLIDOS:</strong> </th>
-                            <td>
-                            //------------------------
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <strong>DNI:</strong> </th>
-                            <td>
-                            //------------------------
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                <strong>FECHA DE NACIMIENTO:</strong> </th>
-                            <td>
-                            //------------------------
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </main>
+	<main>
+	<h1 align="center">Detalle Personal</h1>
+	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div class="container">
+		<div class="row">
+			<h2>Datos Personales</h2>
+			<table>
+				<tr>
+					<th><strong>NOMBRE:</strong></th>
+					<td></td>
+				</tr>
+				<tr>
+					<th><strong>APELLIDOS:</strong></th>
+					<td></td>
+				</tr>
+				<tr>
+					<th><strong>DNI:</strong></th>
+					<td></td>
+				</tr>
+				<tr>
+					<th><strong>FECHA DE NACIMIENTO:</strong></th>
+					<td></td>
+				</tr>
+				<%
+					List<Persona> detalle = ConsultaAgenda.getContactos();
+					for (int i = 0; i < detalle.size(); i++) {
+						out.println("<tr>");
+						out.println("<th>");
+						out.println("<td>" + detalle.get(i).getNombre() + "</td>");
+						out.println("</th>");
+						out.println("</tr>");
+						out.println("<tr>");
+						out.println("<th>");
+						out.println("<td>" + detalle.get(i).getApellido1() + " " + detalle.get(i).getApellido2() + "</td>");
+						out.println("</th>");
+						out.println("</tr>");
+						out.println("<tr>");
+						out.println("<th>");
+						out.println("<td>" + detalle.get(i).getDni() + "</td>");
+						out.println("</th>");
+						out.println("</tr>");
+						out.println("<tr>");
+						out.println("<th>");
+						out.println("<td>" + detalle.get(i).getFechaNacimiento() + "</td>");
+						out.println("</th>");
+						out.println("</tr>");
+					}
+				%>
+			</table>
+		</div>
+	</div>
+	</section> </main>
 </body>
 </html>

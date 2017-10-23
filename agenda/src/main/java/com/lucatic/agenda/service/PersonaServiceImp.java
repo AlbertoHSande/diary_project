@@ -28,5 +28,9 @@ public class PersonaServiceImp implements IPersonaService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	public List<Persona> detalles() {
+		// TODO Auto-generated method stub
+		return daoPersona.findById();
 
 }
+	}
