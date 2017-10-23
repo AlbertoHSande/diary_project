@@ -12,6 +12,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.lucatic.agenda.model.Persona;
@@ -21,7 +22,7 @@ import com.lucatic.agenda.model.Persona;
 @Configuration
 @ComponentScan("com.lucatic.agenda")
 @EnableTransactionManagement
-public class ApplicationContextConfig {
+public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -30,10 +31,11 @@ public class ApplicationContextConfig {
 		return viewResolver;
 	}
 
-
+	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
-		//registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");	    
+		registry.addResourceHandler("src/main/webapp/resources/**").addResourceLocations("/css/");
+		//registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+	//	registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");	    
 	}
 
 
