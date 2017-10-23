@@ -8,4 +8,8 @@ public interface IDAOPersona {
 	public Persona findById(String key);
 	
 	public List<Persona> findAll();
+
+	//int insert(Persona ov);
+
+	public void saveOrUpdate(Persona persona);
 }

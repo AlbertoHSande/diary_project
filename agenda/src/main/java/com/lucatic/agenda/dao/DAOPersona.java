@@ -71,6 +71,19 @@ System.out.println(listp.toString());
 		return listp;
 
 	}
+	
+	@Override
+	@Transactional
+	public void saveOrUpdate(Persona persona) {
+		sessionFactory.getCurrentSession().saveOrUpdate(persona);
+	}
+/*
+	@Override
+	public int insert(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	*/
 /*
 	@Override
 	public int delete(Persona ov) {

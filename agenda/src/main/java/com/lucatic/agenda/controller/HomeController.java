@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lucatic.agenda.dao.DAOPersona;
 import com.lucatic.agenda.model.Persona;
 import com.lucatic.agenda.service.IPersonaService;
+import com.lucatic.agenda.service.PersonaServiceImp;
 
 
 
@@ -30,6 +32,24 @@ public class HomeController {
 		model.addObject("persona", persona);
 		return model;
 	}
+	
+	
+	@RequestMapping(value = "/new", method = RequestMethod.GET)
+	public ModelAndView view_Agregar_Persona() {
+		//Redirige a nueva persona(no crea)
+		ModelAndView model = new ModelAndView("agregar_persona");
+		return model;		
+	}
+	
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+		//Agregar Personi
+	public ModelAndView savePersona(@ModelAttribute Persona persona) {
+		System.out.println(persona.toString());
+		new DAOPersona().saveOrUpdate(persona);
+		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+		return new ModelAndView("redirect:/");
+	}
+	
 	
 //	@Autowired
 //	private UserService userService;

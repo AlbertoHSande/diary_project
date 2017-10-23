@@ -15,7 +15,7 @@
 </head>
 <body>
 	<h1>Lista de personas</h1>
-	<button type="button" class="btn btn-success">Añadir</button>
+	<button type="button" class="btn btn-success"  onClick="location.href = 'new' ">Añadir</button>
 	<table border="1">
 		<tr>
 			<th>ID</th>
