@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -33,13 +34,14 @@ public class DAOPersona implements IDAOPersona {
 	@Override
 	//poner en las implementaciones de las interfaces
 	@Transactional
-	public Persona findById(String key) {
+	public Persona findById(int key) {
 
 		Persona p=null;
 		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
-		///creamos un array y metemos los resultados de la query
+		p = (Persona)query.uniqueResult();
+/*		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
 		for (Object[] row : list) {
@@ -52,7 +54,7 @@ public class DAOPersona implements IDAOPersona {
 			p.setFechaNacimiento((String) row[5]);
 			p.setIdEmpleado((int) row[6]);
 
-		}
+		}*/
 		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
 		return p;
 	}
@@ -75,10 +77,10 @@ System.out.println(listp.toString());
 	@Override
 	@Transactional
 	public void saveOrUpdate(Persona persona) {
-		System.out.println("En el DAOOOOOOOOOO  SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-		System.out.println(persona.toString());
-		sessionFactory.getCurrentSession().save(persona);
-		
+		Session session = sessionFactory.openSession();
+		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
+		session.saveOrUpdate(persona);
+		session.flush();
 	}
 /*
 	@Override

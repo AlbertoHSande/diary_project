@@ -6,7 +6,7 @@ import com.lucatic.agenda.model.Persona;
 public interface IPersonaService {
 	public List<Persona> list();
 	
-	public Persona get(String id);
+	public Persona get(int id);
 	
 	public void saveOrUpdate(Persona persona);
 }

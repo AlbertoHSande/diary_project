@@ -23,9 +23,9 @@ public class PersonaServiceImp implements IPersonaService {
 	}
 
 	@Override
-	public Persona get(String id) {
+	public Persona get(int i) {
 		// TODO Auto-generated method stub
-		return daoPersona.findById(id);
+		return daoPersona.findById(i);
 	}
 
 	@Override

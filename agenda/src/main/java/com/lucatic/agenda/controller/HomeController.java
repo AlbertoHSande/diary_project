@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.lucatic.agenda.dao.DAOPersona;
 import com.lucatic.agenda.model.Persona;
 import com.lucatic.agenda.service.IPersonaService;
@@ -43,27 +45,20 @@ public class HomeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
-		//System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-		//System.out.println(persona.toString());
-		//persona.setId(4);
-		persona.setFechaNacimiento("2017/12/12");
+		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
-		//new DAOPersona().saveOrUpdate(persona);
+		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return new ModelAndView("redirect:/");
 	}
 	
-	/*
-	 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public ModelAndView saveUser(@ModelAttribute User user) {
-		userService.saveOrUpdate(user);
-		return new ModelAndView("redirect:/");
-	} 
-	  
-	 
-	 * */
-	
-	
-	
+	@RequestMapping("/edit")
+	public ModelAndView editPersona(@RequestParam("id") int id) throws Exception {
+		//Falta userService
+		Persona persona = PersonaService.get(id);
+		ModelAndView model = new ModelAndView("edit");
+		model.addObject("persona", persona);
+		return model;
+	}
 	
 	
 //	@Autowired
