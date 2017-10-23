@@ -33,17 +33,16 @@ public class DAOPersona implements IDAOPersona {
 	@Override
 	//poner en las implementaciones de las interfaces
 	@Transactional
-	public Persona findById(int key) {
+	public Persona findById(String key) {
 
 		Persona p=null;
-		String hq1 ="FROM Persona WHERE idpersonas=" + key;
+		String hq1 ="FROM personas WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
-		p = (Persona) query.uniqueResult();
 		///creamos un array y metemos los resultados de la query
-/*		List<Persona[]> list = query.list(); 
+		List<Object[]> list = query.list(); 
 
-		for (Persona[] row : list) {
+		for (Object[] row : list) {
 			p= new Persona();
 			p.setId((int) row[0]);
 			p.setNombre((String) row[1]);
@@ -53,7 +52,7 @@ public class DAOPersona implements IDAOPersona {
 			p.setFechaNacimiento((String) row[5]);
 			p.setIdEmpleado((int) row[6]);
 
-		}*/
+		}
 		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
 		return p;
 	}
@@ -62,13 +61,68 @@ public class DAOPersona implements IDAOPersona {
 	@Transactional
 	public List<Persona> findAll() {
 
-		//FUNCIONA MUESTRA INFO DE LA TABLA PERSONASSSSSSSSSSSSSSSSSSSSSSSSS
+
 		@SuppressWarnings("unchecked")
 		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+System.out.println("LISTANDO Personal:");
+System.out.println(listp.toString());
 		return listp;
 
+	}
+	
+	@Override
+	@Transactional
+	public void saveOrUpdate(Persona persona) {
+		sessionFactory.getCurrentSession().saveOrUpdate(persona);
+	}
+/*
+	@Override
+	public int insert(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	*/
+/*
+	@Override
+	public int delete(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insert(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update(Persona ov) {
+		// TODO Auto-generated method stub
+		return 0;
+	}*/
+
+	/*	@Override
+	@Transactional
+	public List<Personas> findAll() {
+
+
+		@SuppressWarnings("unchecked")
+		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
+		.createCriteria(Persona.class)
+		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
+		return listp;
+
+	}
+
+	@Override
+	@Transactional
+	public int delete(Persona ov) {
+		//cruzar los dedos para que funcione
+		sessionFactory.getCurrentSession().delete(ov.getIdpersonas());
+		return 0;
 	}
 
 
@@ -78,7 +132,7 @@ public class DAOPersona implements IDAOPersona {
 
 		String hq1 ="INSERT INTO usuario(nombre, apellido1, apellido2, dni, fechaNacimiento) VALUES ('"
 				+ ov.getNombre() + "','" + ov.getApellido1() + "','" + ov.getApellido2() + "','" + ov.getDni() + "','"
-				+ ov.getFechaNacimiento() +"')";
+				+ ov.getFecha() +"')";
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 
@@ -90,14 +144,5 @@ public class DAOPersona implements IDAOPersona {
 		sessionFactory.getCurrentSession().saveOrUpdate(ov);
 		return 0;
 	}
-
-	@Override
-	public int delete(Persona ov) {
-		sessionFactory.getCurrentSession().delete(ov.getId());
-		return 0;
-	}
-
-
-
-	 
+	 */
 }

@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.lucatic.agenda.dao.DAOPersona;
 import com.lucatic.agenda.dao.IDAOPersona;
 import com.lucatic.agenda.model.Persona;
 
@@ -29,4 +30,11 @@ public class PersonaServiceImp implements IPersonaService {
 		return daoPersona.findById(i);
 	}
 
+	@Override
+	public void saveOrUpdate(Persona persona) {
+		daoPersona.saveOrUpdate(persona);
+		
+	}
+
+	
 }
