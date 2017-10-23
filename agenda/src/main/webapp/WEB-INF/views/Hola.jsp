@@ -3,6 +3,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<head>
+        <spring:url value="static/css/bootstrap.css" var="bootstrap"/>
+        <link href="${bootstrap}" rel="stylesheet" />
+        <spring:url value="static/css/custom.css" var="custom"/>
+        <link href="${custom}" rel="stylesheet" />
+</head>
 <body>
 	<h1>Hola mUndoooo</h1>
 	<table border="1">

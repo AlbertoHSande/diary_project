@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lucatic.agenda.model.Persona;
@@ -33,11 +34,12 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping("/delete")
-	public ModelAndView delete() throws Exception {
+	@RequestMapping("/edit")
+	public ModelAndView edit(@RequestParam("id") int id) throws Exception {
 		//Falta userService
-		List<Persona> persona = PersonaService.list();
-		ModelAndView model = new ModelAndView("Hola");
+		System.out.println(id);
+		Persona persona = PersonaService.get(id);
+		ModelAndView model = new ModelAndView("details");
 		model.addObject("persona", persona);
 		return model;
 	}
