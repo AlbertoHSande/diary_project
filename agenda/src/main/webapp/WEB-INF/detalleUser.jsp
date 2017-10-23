@@ -20,23 +20,30 @@
                         <tr>
                             <th>
                                 <strong>NOMBRE:</strong> </th>
-                            <td></td>
+                            <td>
+                            //------------------------
+                            </td>
                         </tr>
                         <tr>
                             <th>
                                 <strong>APELLIDOS:</strong> </th>
-                            <td></td>
+                            <td>
+                            //------------------------
+                            </td>
                         </tr>
                         <tr>
                             <th>
                                 <strong>DNI:</strong> </th>
-                            <td></td>
+                            <td>
+                            //------------------------
+                            </td>
                         </tr>
                         <tr>
                             <th>
                                 <strong>FECHA DE NACIMIENTO:</strong> </th>
-                            <td></td>
-
+                            <td>
+                            //------------------------
+                            </td>
                         </tr>
                     </table>
                 </div>
