@@ -27,7 +27,7 @@ public class PersonaServiceImp implements IPersonaService {
 		// TODO Auto-generated method stub
 		return daoPersona.findById(i);
 	}
-
+	
 	@Override
 	public void saveOrUpdate(Persona persona) {
 		daoPersona.saveOrUpdate(persona);
@@ -35,3 +35,4 @@ public class PersonaServiceImp implements IPersonaService {
 
 	
 }
+	

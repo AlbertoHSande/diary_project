@@ -60,6 +60,14 @@ public class HomeController {
 		return model;
 	}
 	
+	@RequestMapping("/DetalleUser")
+	public ModelAndView findById(@RequestParam("id") int id) throws Exception {
+		
+		Persona persona = PersonaService.get(id);
+		ModelAndView model = new ModelAndView("DetalleUser");
+		model.addObject("persona", persona);
+		return model;
+	}
 	
 //	@Autowired
 //	private UserService userService;

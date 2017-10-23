@@ -56,7 +56,7 @@
 				</div>
 
 				<div class="form-group">
-					<label for="idEmpleado">Dni:</label> <input type="text" value="4"
+					<label for="idEmpleado">Dni:</label> <input type="text" value="2"
 						class="form-control" id="idEmpleado" name="idEmpleado" required="required">
 				</div>
 
