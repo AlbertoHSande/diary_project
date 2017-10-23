@@ -19,13 +19,15 @@
 		</tr>
 
 		<c:forEach var="persona" items="${persona}" varStatus="status">
-		
+	
 			<tr>
 				<td>${status.index + 1}</td>
 				<td>${persona.nombre}</td>
 				<td>${persona.apellido1}</td>
 				<td><a href="edit?id=${persona.id}">Modificar</a>
+
 					&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${persona.id}">Eliminar</a>
+
 				</td>
 			</tr>
 		</c:forEach>
