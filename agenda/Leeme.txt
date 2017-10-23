@@ -1,0 +1,2 @@
+A realizar antes de la entrega:
+1.- Borrar "syso" de DAOPersona.
