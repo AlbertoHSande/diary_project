@@ -40,7 +40,7 @@ public class DAOPersona implements IDAOPersona {
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 		///creamos un array y metemos los resultados de la query
-		List<Object[]> list = query.list(); 
+		List<Object[]> list = query.list();
 
 		for (Object[] row : list) {
 			p= new Persona();
@@ -66,8 +66,8 @@ public class DAOPersona implements IDAOPersona {
 		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-System.out.println(listp.toString());
+		System.out.println("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+		System.out.println(listp.toString());
 		return listp;
 
 	}

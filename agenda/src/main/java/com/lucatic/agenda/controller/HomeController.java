@@ -31,6 +31,15 @@ public class HomeController {
 		return model;
 	}
 	
+	@RequestMapping("/delete")
+	public ModelAndView delete() throws Exception {
+		//Falta userService
+		List<Persona> persona = PersonaService.list();
+		ModelAndView model = new ModelAndView("Hola");
+		model.addObject("persona", persona);
+		return model;
+	}
+	
 //	@Autowired
 //	private UserService userService;
 /*
