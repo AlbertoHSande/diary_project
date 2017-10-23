@@ -25,6 +25,8 @@
 		<div id="main">
 			<form action="save" method="post" modelAttribute="persona">
 
+					<input type="hidden" id="id" name="id" value=0>
+
 				<div class="form-group">
 					<label for="nombre">Nombre:</label> <input type="text"
 						class="form-control" id="nombre" name="nombre" required="required" value="R2"> 
