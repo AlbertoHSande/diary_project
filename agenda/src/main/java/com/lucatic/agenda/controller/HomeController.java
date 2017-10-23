@@ -46,7 +46,7 @@ public class HomeController {
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
 		System.out.println(persona.toString());
-		new DAOPersona().saveOrUpdate(persona);
+		PersonaService.saveOrUpdate(persona);
 		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return new ModelAndView("redirect:/");
 	}

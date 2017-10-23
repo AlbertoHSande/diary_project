@@ -26,6 +26,8 @@
 			<form action="save" method="post" modelAttribute="persona">
 
 				<div class="form-group">
+					<input type="hidden" id="id" name="id" value="${persona.id}">
+				
 					<label for="nombre">Nombre:</label> <input type="text"
 						class="form-control" id="nombre" name="nombre" required="required" value="${persona.nombre}"> 
 
