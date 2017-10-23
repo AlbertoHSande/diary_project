@@ -33,13 +33,14 @@ public class DAOPersona implements IDAOPersona {
 	@Override
 	//poner en las implementaciones de las interfaces
 	@Transactional
-	public Persona findById(String key) {
+	public Persona findById(int key) {
 
 		Persona p=null;
-		String hq1 ="FROM personas WHERE id="+key;
+		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
-		///creamos un array y metemos los resultados de la query
+		p = (Persona)query.uniqueResult();
+/*		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
 		for (Object[] row : list) {
@@ -52,7 +53,7 @@ public class DAOPersona implements IDAOPersona {
 			p.setFechaNacimiento((String) row[5]);
 			p.setIdEmpleado((int) row[6]);
 
-		}
+		}*/
 		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
 		return p;
 	}

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lucatic.agenda.dao.DAOPersona;
@@ -48,6 +49,15 @@ public class HomeController {
 		new DAOPersona().saveOrUpdate(persona);
 		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return new ModelAndView("redirect:/");
+	}
+	
+	@RequestMapping("/edit")
+	public ModelAndView editPersona(@RequestParam("id") int id) throws Exception {
+		//Falta userService
+		Persona persona = PersonaService.get(id);
+		ModelAndView model = new ModelAndView("edit");
+		model.addObject("persona", persona);
+		return model;
 	}
 	
 	

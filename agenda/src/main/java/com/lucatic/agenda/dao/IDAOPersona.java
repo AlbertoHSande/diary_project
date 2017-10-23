@@ -5,7 +5,7 @@ import java.util.List;
 import com.lucatic.agenda.model.Persona;
 
 public interface IDAOPersona {
-	public Persona findById(String key);
+	public Persona findById(int key);
 	
 	public List<Persona> findAll();
 
