@@ -19,45 +19,52 @@
 			<table>
 				<tr>
 					<th><strong>NOMBRE:</strong></th>
-					<td></td>
+					<td>
+					
+					</td>
 				</tr>
 				<tr>
 					<th><strong>APELLIDOS:</strong></th>
-					<td></td>
+					<td>
+					{}
+					</td>
 				</tr>
 				<tr>
 					<th><strong>DNI:</strong></th>
-					<td></td>
+					<td>
+					{}
+					</td>
 				</tr>
 				<tr>
 					<th><strong>FECHA DE NACIMIENTO:</strong></th>
-					<td></td>
+					<td>
+					{}
+					</td>
 				</tr>
-				<%
-					List<Persona> detalle = ConsultaAgenda.getContactos();
-					for (int i = 0; i < detalle.size(); i++) {
+				<%-- 
+			
 						out.println("<tr>");
 						out.println("<th>");
-						out.println("<td>" + detalle.get(i).getNombre() + "</td>");
+						out.println("<td>" + getNombre() + "</td>");
 						out.println("</th>");
 						out.println("</tr>");
 						out.println("<tr>");
 						out.println("<th>");
-						out.println("<td>" + detalle.get(i).getApellido1() + " " + detalle.get(i).getApellido2() + "</td>");
+						out.println("<td>" + getApellido1() + " " + getApellido2() + "</td>");
 						out.println("</th>");
 						out.println("</tr>");
 						out.println("<tr>");
 						out.println("<th>");
-						out.println("<td>" + detalle.get(i).getDni() + "</td>");
+						out.println("<td>" + getDni() + "</td>");
 						out.println("</th>");
 						out.println("</tr>");
 						out.println("<tr>");
 						out.println("<th>");
-						out.println("<td>" + detalle.get(i).getFechaNacimiento() + "</td>");
+						out.println("<td>" + getFechaNacimiento() + "</td>");
 						out.println("</th>");
 						out.println("</tr>");
-					}
-				%>
+					
+				 --%>
 			</table>
 		</div>
 	</div>
