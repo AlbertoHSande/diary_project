@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.lucatic.agenda.model.Persona;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+
 public interface IDAOPersona {
-	public Persona findById(String key);
+	public Persona findById(String id);
 	
 	public List<Persona> findAll();
 
