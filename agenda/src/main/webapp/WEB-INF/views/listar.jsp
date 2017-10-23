@@ -3,18 +3,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>LISTADO DE Personas</title>
+</head>
 <body>
-	<h1>Hola mUndoooo</h1>
+	<h1>Lista de personas</h1>
+	<button type="button" class="btn btn-success">Añadir</button>
 	<table border="1">
 		<tr>
-			<th>Nº</th>
-			<th>Usuario</th>
-			<th>Email</th>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
 			<th>Acciones</th>
 		</tr>
-
 		<c:forEach var="persona" items="${persona}" varStatus="status">
-		
+
 			<tr>
 				<td>${status.index + 1}</td>
 				<td>${persona.nombre}</td>
