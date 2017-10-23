@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.lucatic.agenda.dao.DAOPersona;
 import com.lucatic.agenda.model.Persona;
 import com.lucatic.agenda.service.IPersonaService;
@@ -44,11 +43,27 @@ public class HomeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
-		System.out.println(persona.toString());
-		new DAOPersona().saveOrUpdate(persona);
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+		//System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+		//System.out.println(persona.toString());
+		//persona.setId(4);
+		persona.setFechaNacimiento("2017/12/12");
+		PersonaService.saveOrUpdate(persona);
+		//new DAOPersona().saveOrUpdate(persona);
 		return new ModelAndView("redirect:/");
 	}
+	
+	/*
+	 	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public ModelAndView saveUser(@ModelAttribute User user) {
+		userService.saveOrUpdate(user);
+		return new ModelAndView("redirect:/");
+	} 
+	  
+	 
+	 * */
+	
+	
+	
 	
 	
 //	@Autowired

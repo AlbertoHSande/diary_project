@@ -36,7 +36,7 @@ public class DAOPersona implements IDAOPersona {
 	public Persona findById(String key) {
 
 		Persona p=null;
-		String hq1 ="FROM personas WHERE id="+key;
+		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 		///creamos un array y metemos los resultados de la query
@@ -75,7 +75,10 @@ System.out.println(listp.toString());
 	@Override
 	@Transactional
 	public void saveOrUpdate(Persona persona) {
-		sessionFactory.getCurrentSession().saveOrUpdate(persona);
+		System.out.println("En el DAOOOOOOOOOO  SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+		System.out.println(persona.toString());
+		sessionFactory.getCurrentSession().save(persona);
+		
 	}
 /*
 	@Override
