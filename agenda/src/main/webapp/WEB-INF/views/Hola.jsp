@@ -26,6 +26,7 @@
 				<td>${persona.nombre}</td>
 				<td>${persona.apellido1}</td>
 				<td><a href="edit?id=${persona.id}">Modificar</a>
+				<td><a href="DetalleUser?id=${persona.id}">Detalles</a>
 
 					&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${persona.id}">Eliminar</a>
 
