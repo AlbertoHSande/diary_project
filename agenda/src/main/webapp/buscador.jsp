@@ -12,7 +12,6 @@
 <script>
 
 	// problemas al ponerlo en un fichero externo
-	alert("muxo beti");
 	var request;  
 	function sendInfo()  
 	{  
@@ -42,12 +41,13 @@
 
 </script>
  
-	<h1>AJAX</h1>
+	<h1>Busqueda por nombre o por id</h1>
 	<marquee>
 		<h1>This is AWESOME PAPU</h1>
 	</marquee>
+	
 	<form name="vinform">
-		Buscador por id:<input type="text" name="t1" onkeyup="sendInfo()">
+		Buscador<input type="text" name="t1" onkeyup="sendInfo()">
 	</form>
 
 	<span id="amit"> </span>
