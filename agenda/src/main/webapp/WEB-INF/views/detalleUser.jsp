@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<nav><a href="./">Volver</a></nav>
+<nav><a href="./"><img href="../static/images/atras.jpg"/></a></nav>
 	<main>
 	<h1 align="center">Detalle Personal</h1>
 	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
