@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	alert("alepeflsdlf");
     /* BOOTSNIPP FULLSCREEN FIX */
 /*    if (window.location == window.parent.location) {
         $('#back-to-bootsnipp').removeClass('hide');

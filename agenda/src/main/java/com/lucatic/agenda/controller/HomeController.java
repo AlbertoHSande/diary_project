@@ -42,12 +42,26 @@ public class HomeController {
 		return model;		
 	}
 	
+	@RequestMapping(value = "/busca", method = RequestMethod.GET)
+	public ModelAndView view_Buscador() {
+		//Redirige a nueva persona(no crea)
+		ModelAndView model = new ModelAndView("buscador");
+		return model;		
+	}
+	
+	@RequestMapping(value = "/aj", method = RequestMethod.GET)
+	public ModelAndView view_Buscador_ajax(){
+		//Redirige a nueva persona(no crea)
+		ModelAndView model = new ModelAndView("ajax");
+		return model;		
+	}
+	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
+		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return new ModelAndView("redirect:/");
 	}
 	
@@ -60,13 +74,14 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping("/delete")
-	public ModelAndView deletePersona(@RequestParam("id") int id) throws Exception {
+	@RequestMapping("/detalle")
+	public ModelAndView findById(@RequestParam("id") int id) throws Exception {
+		
 		Persona persona = PersonaService.get(id);
-		PersonaService.delete(persona);
-		return new ModelAndView("redirect:/");
+		ModelAndView model = new ModelAndView("detalleUser");
+		model.addObject("persona", persona);
+		return model;
 	}
-	
 	
 //	@Autowired
 //	private UserService userService;

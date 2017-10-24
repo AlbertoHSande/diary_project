@@ -1,6 +1,5 @@
 $(document).ready(function () {
 	// get the form values
-	alert("muxo beti");
 	var request;  
 	function sendInfo()  
 	{  
