@@ -25,7 +25,7 @@
 			<fieldset>
 
 				<!-- Form Name -->
-				<legend>Contact Us Today!</legend>
+				<legend>Nuevo contacto en tu agenda :D!</legend>
 
 				<!-- Text input-->
 
