@@ -5,15 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
 <title>Agregar Persona</title>
 </head>
 <body>
@@ -56,8 +48,8 @@
 				</div>
 
 				<div class="form-group">
-					<label for="idEmpleado">Dni:</label> <input type="text" value="4"
-						class="form-control" id="idEmpleado" name="idEmpleado" required="required">
+					<label for="idEmpleado">IDemple:</label> <input type="text" value="3"
+						class="form-control" id="idEmpleado" name="idEmpleado" required="required" hidden="">
 				</div>
 
 				<button type="submit" class="btn btn-success">Agregar</button>
