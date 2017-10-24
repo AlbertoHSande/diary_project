@@ -12,4 +12,6 @@ public interface IDAOPersona {
 	//int insert(Persona ov);
 
 	public void saveOrUpdate(Persona persona);
+	
+	public void delete(Persona persona);
 }

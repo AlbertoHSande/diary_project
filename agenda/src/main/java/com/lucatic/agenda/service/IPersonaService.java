@@ -9,4 +9,6 @@ public interface IPersonaService {
 	public Persona get(int id);
 	
 	public void saveOrUpdate(Persona persona);
+	
+	public void delete(Persona persona);
 }

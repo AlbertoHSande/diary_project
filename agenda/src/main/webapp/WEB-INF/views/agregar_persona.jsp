@@ -18,56 +18,54 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div class="row">
-			<div id="header" class="col-xs-12 col-sm-12 col-md-12">
-				<a href="/agenda"><img src="/atras.jpg"/></a>
-				<h1>Nueva Persona</h1>
-			</div>
-			<div id="main" class="col-xs-12 col-sm-12 col-md-12">
-				<form action="save" method="post" modelAttribute="persona">
+		<div id="header">
+			<a href="/agenda">Volver</a>
+			<h1>Nueva Persona</h1>
+		</div>
+		<div id="main">
+			<form action="save" method="post" modelAttribute="persona">
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12">
-						<label for="nombre">Nombre:</label> <input type="text"
-							class="form-control" id="nombre" name="nombre"
-							required="required" value="R2">
+					<input type="hidden" id="id" name="id" value=0>
 
-					</div>
+				<div class="form-group">
+					<label for="nombre">Nombre:</label> <input type="text"
+						class="form-control" id="nombre" name="nombre" required="required" value="R2"> 
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12">
-						<label for="apellido1">1er Apellido: </label> <input type="text"
-							value="RR" class="form-control" id="apellido1" name="apellido1"
-							required="required">
-					</div>
+				</div>
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12">
-						<label for="apellido2">2º Apellido: </label> <input type="text"
-							value="RR" class="form-control" id="apellido2" name="apellido2"
-							required="required">
-					</div>
+				<div class="form-group">
+					<label for="apellido1">1er Apellido: </label> <input type="text" value="RR"
+						class="form-control" id="apellido1" name="apellido1"
+						required="required">
+				</div>
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12">
-						<label for="dni">Dni:</label> <input type="text" value="12Y"
-							class="form-control" id="dni" name="dni" required="required">
-					</div>
+				<div class="form-group">
+					<label for="apellido2">2º Apellido: </label> <input type="text" value="RR"
+						class="form-control" id="apellido2" name="apellido2"
+						required="required">
+				</div>
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12">
-						<label for="fecha">Fecha:</label> <input type="date"
-							value="11/10/2011" class="form-control" id="fecha" name="fecha"
-							required="required">
-					</div>
+				<div class="form-group">
+					<label for="dni">Dni:</label> <input type="text" value="12Y"
+						class="form-control" id="dni" name="dni" required="required">
+				</div>
 
-					<div class="form-group" class="col-xs-12 col-sm-12 col-md-12" hidden="true">
-						<label for="idEmpleado">IdEmple:</label> <input type="text" value="2"
-							class="form-control" id="idEmpleado" name="idEmpleado"
-							required="required">
-					</div>
+				<div class="form-group">
+					<label for="fecha">Fecha:</label> <input type="date" value="11/10/2011"
+						class="form-control" id="fecha" name="fecha" required="required">
+				</div>
 
-					<button type="submit" class="btn btn-success">Agregar</button>
+				<div class="form-group">
+					<label for="idEmpleado">Dni:</label> <input type="text" value="4"
+						class="form-control" id="idEmpleado" name="idEmpleado" required="required">
+				</div>
 
-				</form>
-			</div>
+				<button type="submit" class="btn btn-success">Agregar</button>
+
+			</form>
 		</div>
 	</div>
+
 
 </body>
 </html>
