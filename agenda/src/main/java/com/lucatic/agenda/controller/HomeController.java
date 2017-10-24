@@ -42,6 +42,20 @@ public class HomeController {
 		return model;		
 	}
 	
+	@RequestMapping(value = "/busca", method = RequestMethod.GET)
+	public ModelAndView view_Buscador() {
+		//Redirige a nueva persona(no crea)
+		ModelAndView model = new ModelAndView("buscador");
+		return model;		
+	}
+	
+	@RequestMapping(value = "/aj", method = RequestMethod.GET)
+	public ModelAndView view_Buscador_ajax(){
+		//Redirige a nueva persona(no crea)
+		ModelAndView model = new ModelAndView("ajax");
+		return model;		
+	}
+	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {

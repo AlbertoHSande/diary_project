@@ -16,7 +16,7 @@
 	function sendInfo()  
 	{  
 	var v=document.vinform.t1.value;  
-	var url="ajax.jsp?val="+v;  
+	var url="aj?val="+v;  
 	  
 	if(window.XMLHttpRequest){  
 	request=new XMLHttpRequest();  
