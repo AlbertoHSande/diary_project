@@ -45,9 +45,9 @@ public class HomeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
+		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		return new ModelAndView("redirect:/");
 	}
 	
