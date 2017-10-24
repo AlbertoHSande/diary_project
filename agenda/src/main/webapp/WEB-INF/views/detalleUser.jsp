@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
