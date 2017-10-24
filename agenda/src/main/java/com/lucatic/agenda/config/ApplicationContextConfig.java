@@ -33,8 +33,8 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("src/main/webapp/resources/**").addResourceLocations("/css/");
-		//registry.addResourceHandler("/static/**").addResourceLocations("/static/");
+		//registry.addResourceHandler("src/main/webapp/resources/**").addResourceLocations("/css/");
+		registry.addResourceHandler("/static/**").addResourceLocations("/static/");
 	//	registry.addResourceHandler("/css/**").addResourceLocations("/static/css/");	    
 	}
 
