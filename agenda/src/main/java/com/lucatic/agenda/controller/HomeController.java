@@ -60,11 +60,11 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping("/DetalleUser")
+	@RequestMapping("/detalle")
 	public ModelAndView findById(@RequestParam("id") int id) throws Exception {
 		
 		Persona persona = PersonaService.get(id);
-		ModelAndView model = new ModelAndView("DetalleUser");
+		ModelAndView model = new ModelAndView("detalleUser");
 		model.addObject("persona", persona);
 		return model;
 	}
