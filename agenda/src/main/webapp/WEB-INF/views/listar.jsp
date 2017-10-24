@@ -25,7 +25,6 @@
                         <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
                     </ul>
                 </div>
-                
                 <div class="row" style="display: none;">
                     <div class="col-xs-12">
                         <div class="input-group c-search">
@@ -36,6 +35,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Mostrar datos persona -->
                <c:forEach var="persona" items="${persona}" varStatus="status">
                 <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
