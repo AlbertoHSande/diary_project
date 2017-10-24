@@ -35,6 +35,12 @@ public class PersonaServiceImp implements IPersonaService {
 		daoPersona.saveOrUpdate(persona);
 		
 	}
+	
+	@Override
+	public void delete(Persona persona) {
+		daoPersona.delete(persona);
+		
+	}
 
 	
 }

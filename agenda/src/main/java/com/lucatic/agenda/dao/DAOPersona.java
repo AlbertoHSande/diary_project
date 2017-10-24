@@ -89,14 +89,15 @@ System.out.println(listp.toString());
 		return 0;
 	}
 	*/
-/*
-	@Override
-	public int delete(Persona ov) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
+	public void delete(Persona persona) {
+		Session session = sessionFactory.openSession();
+		session.delete(persona);
+		session.flush();
+	}
+
+/*	@Override
 	public int insert(Persona ov) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -106,8 +107,8 @@ System.out.println(listp.toString());
 	public int update(Persona ov) {
 		// TODO Auto-generated method stub
 		return 0;
-	}*/
-
+	}
+*/
 	/*	@Override
 	@Transactional
 	public List<Personas> findAll() {
