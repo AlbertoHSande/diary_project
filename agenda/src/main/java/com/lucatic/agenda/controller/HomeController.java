@@ -60,16 +60,11 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping(value ="/buscador", method= RequestMethod.GET)
-	public ModelAndView buscador(){
-		ModelAndView model = new ModelAndView("buscador");
-		return model;
-	}
-	
-	@RequestMapping(value ="/ajax", method= RequestMethod.GET)
-	public ModelAndView ajax(){
-		ModelAndView model = new ModelAndView("ajax");
-		return model;
+	@RequestMapping("/delete")
+	public ModelAndView deletePersona(@RequestParam("id") int id) throws Exception {
+		Persona persona = PersonaService.get(id);
+		PersonaService.delete(persona);
+		return new ModelAndView("redirect:/");
 	}
 	
 	
