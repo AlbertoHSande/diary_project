@@ -74,13 +74,14 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping("/delete")
-	public ModelAndView deletePersona(@RequestParam("id") int id) throws Exception {
+	@RequestMapping("/detalle")
+	public ModelAndView findById(@RequestParam("id") int id) throws Exception {
+		
 		Persona persona = PersonaService.get(id);
-		PersonaService.delete(persona);
-		return new ModelAndView("redirect:/");
+		ModelAndView model = new ModelAndView("detalleUser");
+		model.addObject("persona", persona);
+		return model;
 	}
-	
 	
 //	@Autowired
 //	private UserService userService;

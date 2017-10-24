@@ -92,6 +92,7 @@
 				<td>${persona.apellido1}</td>
 				<td><a href="edit?id=${persona.id}">Modificar</a>
 					&nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=${persona.id}">Eliminar</a>
+					&nbsp;&nbsp;&nbsp;&nbsp; <a href="detalle?id=${persona.id}">Detalle</a>
 				</td>
 			</tr>
 		</c:forEach> --%>
