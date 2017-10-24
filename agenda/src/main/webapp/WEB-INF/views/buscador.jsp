@@ -16,7 +16,7 @@
 	function sendInfo()  
 	{  
 	var v=document.vinform.t1.value;  
-	var url="ajax.jsp?val="+v;  
+	var url="ajax?val="+v;  
 	  
 	if(window.XMLHttpRequest){  
 	request=new XMLHttpRequest();  
@@ -46,7 +46,7 @@
 		<h1>This is AWESOME PAPU</h1>
 	</marquee>
 	
-	<form name="vinform">
+	<form name="vinform" action="buscador"  method="GET">
 		Buscador<input type="text" name="t1" onkeyup="sendInfo()">
 	</form>
 

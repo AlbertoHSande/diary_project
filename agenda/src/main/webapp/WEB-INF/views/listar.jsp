@@ -16,6 +16,7 @@
 <body>
 	<h1>Lista de personas</h1>
 	<button type="button" class="btn btn-success"  onClick="location.href = 'new' ">Añadir</button>
+	<button type="button" class="btn btn-success"  onClick="location.href = 'buscador' ">Buscar</button>
 	<table border="1">
 		<tr>
 			<th>ID</th>
@@ -35,5 +36,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="buscador">buscador de presonas</a>
 </body>
 </html>

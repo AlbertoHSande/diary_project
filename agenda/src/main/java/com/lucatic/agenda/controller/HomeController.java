@@ -60,6 +60,18 @@ public class HomeController {
 		return model;
 	}
 	
+	@RequestMapping(value ="/buscador", method= RequestMethod.GET)
+	public ModelAndView buscador(){
+		ModelAndView model = new ModelAndView("buscador");
+		return model;
+	}
+	
+	@RequestMapping(value ="/ajax", method= RequestMethod.GET)
+	public ModelAndView ajax(){
+		ModelAndView model = new ModelAndView("ajax");
+		return model;
+	}
+	
 	
 //	@Autowired
 //	private UserService userService;
