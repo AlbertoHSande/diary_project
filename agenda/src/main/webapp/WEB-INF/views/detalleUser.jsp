@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
 <meta charset="UTF-8">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<nav><a href="./"><img href="../static/images/atras.jpg"/></a></nav>
+<nav><a href="./"><img src="<c:url value='/resources/images/atras.jpg' />" width=30px/></a></nav>
 	<main>
 	<h1 align="center">Detalle Personal</h1>
 	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
