@@ -17,7 +17,7 @@
 <c:import url="menu.jsp"></c:import>  
 	<table border="1">
 	
-	<div class="container scroll">
+	<div class="container">
 
     <div class="row miagenda">
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <!-- Mostrar datos persona -->
+                 <ul class="list-group" id="contact-list">
                <c:forEach var="persona" items="${persona}" varStatus="status">
-                <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
                             <img src="<c:url value='/resources/images/antonio.jpg' />" alt="Scott Stevens" class="img-responsive img-circle" />

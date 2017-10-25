@@ -5,23 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<c:url value="/resources/js/search.js" />"></script>
+<link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
+<link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>Agregar Persona</title>
 </head>
 <body>
-
+<c:import url="menu.jsp"></c:import>  
 	<div class="container">
 
-		<form class="well form-horizontal" action="save" method="post"
-			modelAttribute="persona">
+		<form class="well form-horizontal" action="save" method="post">
 			<fieldset>
 
 				<!-- Form Name -->
@@ -61,7 +56,7 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-envelope"></i></span> <input type="text"
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
 								value="RR" class="form-control" id="apellido2" name="apellido2"
 								required="required">
 						</div>
@@ -73,7 +68,7 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="text"
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
 								value="12Y" class="form-control" id="dni" name="dni"
 								required="required">
 						</div>
@@ -87,7 +82,7 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="date"
+								class="glyphicon glyphicon-calendar"></i></span> <input type="date"
 								value="11/10/2011" class="form-control" id="fecha" name="fecha"
 								required="required">
 						</div>
@@ -96,11 +91,11 @@
 				
 				
 				<div class="form-group">
-					<label for="idEmpleado" class="col-md-4 control-label">fecha</label>
+					<label for="idEmpleado" class="col-md-4 control-label">Id Empleado</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="3" class="form-control" id="idEmpleado"
+								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="3" hidden="" class="form-control" id="idEmpleado"
 								name="idEmpleado" required="required">
 						</div>
 					</div>
@@ -111,7 +106,7 @@
 					<label class="col-md-4 control-label"></label>
 					<div class="col-md-4">
 						<button type="submit" class="btn btn-warning">
-							enviar <span class="glyphicon glyphicon-send"></span>
+							Agregar <span class="glyphicon glyphicon-send"></span>
 						</button>
 					</div>
 					<a href="/agenda">Volver</a>
