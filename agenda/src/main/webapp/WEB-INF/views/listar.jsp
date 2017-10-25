@@ -20,12 +20,24 @@
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
-                    <span class="title"><a href="">Contactos</a></span>
+                <div class="col-sm-6 col-md-4">
+                <span class="title"><a href="">Contactos</a></span>
+                </div>
+                
+                 <div class="col-sm-6 col-md-3">
+                
+                </div>
+                
+                 <div class="col-sm-6 col-md-5">
+                 
                     <ul class="pull-right c-controls">
                         <li><a href="new" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
                         <li id="admin"><a  href="#" data-toggle="tooltip" data-placement="top" title="Admin"><i class="fa fa-cog"></i></a></li>
                         <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
                     </ul>
+                </div>
+                    
+                   
                 </div>
                 <div class="row" style="display: none;">
                     <div class="col-xs-12">
