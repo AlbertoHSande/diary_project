@@ -83,7 +83,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-calendar"></i></span> <input type="date"
-								value="${persona.fechaNacimiento}" class="form-control" id="fecha" name="fecha"
+								value="${persona.fechaNacimiento}" class="form-control" id="fecha" name="fechaNacimiento"
 								required="required">
 						</div>
 					</div>
