@@ -57,10 +57,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-		//Agregar Personi
+		//agregamos una nueva persona
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
 		return new ModelAndView("redirect:/");
 	}
@@ -76,11 +74,20 @@ public class HomeController {
 	
 	@RequestMapping("/detalle")
 	public ModelAndView findById(@RequestParam("id") int id) throws Exception {
-		
+		//mostramos detalles de una persona
 		Persona persona = PersonaService.get(id);
 		ModelAndView model = new ModelAndView("detalleUser");
 		model.addObject("persona", persona);
 		return model;
+	}
+	
+	
+	@RequestMapping(value = "/delete")
+		//elminamos persona
+	public ModelAndView deletePersona(@RequestParam("id") int id) {
+		Persona persona = PersonaService.get(id);
+		PersonaService.delete(persona);
+		return new ModelAndView("redirect:/");
 	}
 	
 //	@Autowired

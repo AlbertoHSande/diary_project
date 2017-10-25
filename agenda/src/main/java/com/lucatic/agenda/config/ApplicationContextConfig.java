@@ -17,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.lucatic.agenda.model.Persona;
+import com.lucatic.agenda.model.Telefono;
 
 
 
@@ -66,6 +67,7 @@ public class ApplicationContextConfig extends WebMvcConfigurerAdapter {
 		sessionBuilder.addProperties(getHibernateProperties());
 		//Nuestra clase agenta
 		sessionBuilder.addAnnotatedClasses(Persona.class);
+		sessionBuilder.addAnnotatedClasses(Telefono.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 

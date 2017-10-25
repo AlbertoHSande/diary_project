@@ -2,12 +2,21 @@ package com.lucatic.agenda.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "personas")
@@ -28,6 +37,8 @@ public class Persona implements Serializable {
 	private String apellido2;
 	private String dni;
 	private String fechaNacimiento;
+	@OneToMany(mappedBy = "personas")
+	private Set<Telefono> telefonoses = new HashSet<Telefono>(0);
 	private int idEmpleado;
 	
 	public Persona() {
@@ -40,7 +51,19 @@ public class Persona implements Serializable {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 	}
+	
+	public Persona(int id, String nombre, String apellido1, Set<Telefono> telefonoses) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido1 = apellido1;
+		this.telefonoses = telefonoses;
+	}
 
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "idpersonas", unique = true, nullable = false)
 	public int getId() {
 		return id;
 	}
@@ -81,6 +104,7 @@ public class Persona implements Serializable {
 		this.dni = dni;
 	}
 
+	@Column(name = "fechaNacimiento", length = 10)
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
@@ -97,6 +121,15 @@ public class Persona implements Serializable {
 		this.idEmpleado = idEmpleado;
 	}
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "personas")
+	public Set<Telefono> getTelefonoses() {
+		return this.telefonoses;
+	}
+
+	public void setTelefonoses(Set<Telefono> telefonoses) {
+		this.telefonoses = telefonoses;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -122,7 +155,7 @@ public class Persona implements Serializable {
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2
-				+ ", dni=" + dni + ", fechaNacimiento=" + fechaNacimiento + ", idEmpleado=" + idEmpleado + "]";
+				+ ", dni=" + dni + ", fechaNacimiento=" + fechaNacimiento + ", idEmpleado=" + idEmpleado + ", Telefoneses " + telefonoses.toString() + "]";
 	}
 
 	

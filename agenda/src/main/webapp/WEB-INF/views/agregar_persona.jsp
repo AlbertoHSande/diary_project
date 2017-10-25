@@ -5,59 +5,115 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<c:url value="/resources/js/search.js" />"></script>
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
+<link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>Agregar Persona</title>
 </head>
 <body>
-	<div id="wrapper">
-		<div id="header">
-			<a href="./"><img src="<c:url value='/resources/images/atras.jpg' />" width=30px/></a>
-			<h1>Nueva Persona</h1>
-		</div>
-		<div id="main">
-			<form action="save" method="post" modelAttribute="persona">
+<c:import url="menu.jsp"></c:import>  
+	<div class="container miagenda">
+		<form class="well form-horizontal " action="save" method="post">
+			<fieldset>
 
-					<input type="hidden" id="id" name="id" value=0>
+				<!-- Form Name -->
+				<legend>Nuevo contacto en tu agenda :D!</legend>
 
-				<div class="form-group">
-					<label for="nombre">Nombre:</label> <input type="text"
-						class="form-control" id="nombre" name="nombre" required="required" value="R2"> 
-
-				</div>
+				<!-- Text input-->
 
 				<div class="form-group">
-					<label for="apellido1">1er Apellido: </label> <input type="text" value="RR"
-						class="form-control" id="apellido1" name="apellido1"
-						required="required">
+					<label for="nombre" class="col-md-4 control-label">Nombre</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
+								class="form-control" id="nombre" name="nombre"
+								required="required" value="R2">
+						</div>
+					</div>
 				</div>
+
+				<!-- Text input-->
 
 				<div class="form-group">
-					<label for="apellido2">2º Apellido: </label> <input type="text" value="RR"
-						class="form-control" id="apellido2" name="apellido2"
-						required="required">
+					<label for="apellido1" class="col-md-4 control-label">Apellido1</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
+								value="RR" class="form-control" id="apellido1" name="apellido1"
+								required="required">
+						</div>
+					</div>
 				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label for="apellido2" class="col-md-4 control-label">Apellido2</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
+								value="RR" class="form-control" id="apellido2" name="apellido2"
+								required="required">
+						</div>
+					</div>
+				</div>
+				
+					<div class="form-group">
+					<label for="dni" class="col-md-4 control-label">dni</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-user"></i></span> <input type="text"
+								value="12Y" class="form-control" id="dni" name="dni"
+								required="required">
+						</div>
+					</div>
+				</div>
+				
 
 				<div class="form-group">
-					<label for="dni">Dni:</label> <input type="text" value="12Y"
-						class="form-control" id="dni" name="dni" required="required">
+					<label for="fecha" class="col-md-4 control-label">fecha</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-calendar"></i></span> <input type="date"
+								value="" class="form-control" id="fecha" name="fechaNacimiento"
+								required="required">
+						</div>
+					</div>
 				</div>
-
+				
+				
 				<div class="form-group">
-					<label for="fecha">Fecha:</label> <input type="date" value="11/10/2011"
-						class="form-control" id="fecha" name="fecha" required="required">
+					<label for="idEmpleado" class="col-md-4 control-label">Id Empleado</label>
+					<div class="col-md-4 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i
+								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="3" hidden="" class="form-control" id="idEmpleado"
+								name="idEmpleado" required="required">
+						</div>
+					</div>
 				</div>
-
+				
+				<!-- Button -->
 				<div class="form-group">
-					<label for="idEmpleado">IDemple:</label> <input type="text" value="3"
-						class="form-control" id="idEmpleado" name="idEmpleado" required="required" hidden="">
+					<label class="col-md-4 control-label"></label>
+					<div class="col-md-4">
+						<button type="submit" class="btn btn-warning">
+							Agregar <span class="glyphicon glyphicon-send"></span>
+						</button>
+					</div>
+					<a href="/agenda">Volver</a>
 				</div>
 
-				<button type="submit" class="btn btn-success">Agregar</button>
-
-			</form>
-		</div>
+			</fieldset>
+		</form>
 	</div>
-
+	
 
 </body>
 </html>
