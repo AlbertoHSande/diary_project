@@ -96,11 +96,11 @@
 				
 				
 				<div class="form-group">
-					<label for="idEmpleado" class="col-md-4 control-label">fecha</label>
+					<label for="idEmpleado" class="col-md-4 control-label">IDEMPLE</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="3" class="form-control" id="idEmpleado"
+								class="glyphicon glyphicon-earphone"></i></span> <input type="hiden" value="3" class="form-control" id="idEmpleado"
 								name="idEmpleado" required="required">
 						</div>
 					</div>
