@@ -19,7 +19,7 @@
 			<fieldset>
 
 				<!-- Form Name -->
-				<legend>Nuevo contacto en tu agenda :D!</legend>
+				<legend>Nuevo contacto en tu agenda</legend>
 
 				<!-- Text input-->
 
