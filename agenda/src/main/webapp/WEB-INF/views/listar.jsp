@@ -10,6 +10,7 @@
 <script src="<c:url value="/resources/js/search.js" />"></script>
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>LISTADO DE Personas</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
 	<table border="1">
 	<div class="container scroll">
 
-    <div class="row">
+    <div class="row miagenda">
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
