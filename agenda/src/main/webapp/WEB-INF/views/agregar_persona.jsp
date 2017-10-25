@@ -15,7 +15,6 @@
 <body>
 <c:import url="menu.jsp"></c:import>  
 	<div class="container">
-
 		<form class="well form-horizontal" action="save" method="post">
 			<fieldset>
 
