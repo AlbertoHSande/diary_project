@@ -59,7 +59,6 @@ public class HomeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
 		return new ModelAndView("redirect:/");
@@ -81,6 +80,14 @@ public class HomeController {
 		ModelAndView model = new ModelAndView("detalleUser");
 		model.addObject("persona", persona);
 		return model;
+	}
+	
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+		//Agregar Personi
+	public ModelAndView deletePersona(@ModelAttribute Persona persona) {
+		PersonaService.delete(persona);
+		return new ModelAndView("redirect:/");
 	}
 	
 //	@Autowired

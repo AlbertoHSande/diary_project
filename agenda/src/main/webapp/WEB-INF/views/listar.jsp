@@ -7,10 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="<c:url value="/resources/js/search.js" />"></script>
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<c:url value="/resources/js/search.js" />"></script>
 <title>Lisado de Agenda</title>
 </head>
 <body>
@@ -53,8 +52,8 @@
                     </div>
                 </div>
                 <!-- Mostrar datos persona -->
+               <ul class="list-group" id="contact-list">
                <c:forEach var="persona" items="${persona}" varStatus="status">
-                <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
                             <img src="<c:url value='/resources/images/antonio.jpg' />" alt="Scott Stevens" class="img-responsive img-circle" />
