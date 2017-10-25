@@ -83,9 +83,9 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.POST)
-		//Agregar Personi
-	public ModelAndView deletePersona(@ModelAttribute Persona persona) {
+	@RequestMapping("/delete")
+	public ModelAndView deletePersona(@RequestParam("id") int id) {
+		Persona persona = PersonaService.get(id);
 		PersonaService.delete(persona);
 		return new ModelAndView("redirect:/");
 	}
