@@ -16,6 +16,7 @@
 <body>
 <c:import url="menu.jsp"></c:import>  
 	<table border="1">
+	
 	<div class="container scroll">
 
     <div class="row miagenda">
