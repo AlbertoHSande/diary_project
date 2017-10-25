@@ -75,14 +75,13 @@
 				</div>
 				
 
-
 				<div class="form-group">
 					<label for="fecha" class="col-md-4 control-label">fecha</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-calendar"></i></span> <input type="date"
-								value="11/10/2011" class="form-control" id="fecha" name="fecha"
+								value="" class="form-control" id="fecha" name="fechaNacimiento"
 								required="required">
 						</div>
 					</div>
