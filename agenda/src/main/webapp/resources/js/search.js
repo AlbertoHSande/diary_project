@@ -15,6 +15,14 @@ $(document).ready(function () {
         event.preventDefault();
         $('#cant-do-all-the-work-for-you').modal('show');
     })*/
+	
+	$(".mostrar").hide();
+	
+	    $("#admin").click(function(){
+	    	$(".esconder").hide();
+	    	$(".mostrar").slideDown(100);
+	    	//$("").toggle();
+	    });
     
     $('[data-command="toggle-search"]').on('click', function(event) {
         event.preventDefault();

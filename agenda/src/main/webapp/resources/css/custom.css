@@ -98,3 +98,9 @@ ul.c-controls li a:hover {
     padding: 5px 10px;
     font-size: 1.25em;
 }
+.margin2r{
+	margin-top: 2rem;
+}
+.scroll{
+	overflow:auto;
+}
