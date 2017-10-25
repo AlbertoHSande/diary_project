@@ -13,6 +13,7 @@
 <title>LISTADO DE Personas</title>
 </head>
 <body>
+<c:import url="menu.jsp"></c:import>  
 	<table border="1">
 	<div class="container scroll">
 
