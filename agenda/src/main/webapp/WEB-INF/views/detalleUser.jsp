@@ -18,10 +18,10 @@
 </head>
 
 <body>
-
+<c:import url="menu.jsp"></c:import>  
 	<main>
 	<div class="container">
-	<div class="row">
+	<div class="row miagenda">
 		<div class="col-lg-12 col-sm-12">
 
             <div class="card hovercard">
@@ -29,7 +29,7 @@
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="http://lorempixel.com/100/100/people/9/">
+                    <img alt="" src="<c:url value='/resources/images/antonio.jpg' />" >
                 </div>
                 <div align="center" class="info">
                     <div class="title" align="left">
@@ -37,6 +37,8 @@
                     <div class="desc">${persona.nombre} ${persona.apellido1} ${persona.apellido2}</div>
                     <div class="desc">${persona.dni}</div>
                     <div class="desc">${persona.fechaNacimiento}</div>
+                    <div class="desc">Telefonos</div>
+                    
                 </div>
 	</main>
 </body>

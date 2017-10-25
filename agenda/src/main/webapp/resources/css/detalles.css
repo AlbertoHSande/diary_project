@@ -10,6 +10,8 @@ body {
     background-size: cover;
 }
 
+
+
 .card {
     padding-top: 20px;
     margin: 10px 0 20px 0;
@@ -254,3 +256,6 @@ padding: 10px;
 }
 
 .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+.miagenda{
+	padding-top: 7%;
+}
