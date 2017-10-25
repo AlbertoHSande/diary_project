@@ -64,7 +64,10 @@
                             <span class="glyphicon glyphicon-map-marker text-muted c-info esconder" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs esconder"> <span class="text-muted esconder">5842 Hillcrest Rd</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info esconder" data-toggle="tooltip" title="(870) 288-4149"></span>
-                            <span class="visible-xs esconder"> <span class="text-muted ">(870) 288-4149</span><br/></span>
+                            <span class="visible-xs esconder"> <span class="text-muted ">
+                            <c:forEach var="telefono" items="${persona.telefonoses}">
+                            	<c:out value="${telefono.telefono}" />
+                            </c:forEach></span><br/></span>
                             <span class="fa fa-comments text-muted c-info esconder" data-toggle="tooltip" title="scott.stevens@example.com"></span>
                             <span class="visible-xs esconder"> <span class="text-muted esconder">${persona}</span><br/></span>
                             <div class="mostrar margin2r" >
