@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,11 +37,18 @@ public class DAOPersona implements IDAOPersona {
 	@Transactional
 	public Persona findById(int key) {
 
-		Persona p=null;
+		@SuppressWarnings("unchecked")
+		Session session = sessionFactory.openSession();
+		Persona p = (Persona) session
+		.createCriteria(Persona.class)
+		.add(Restrictions.eq("id", key)).uniqueResult();
+		return p;
+		
+/*		Persona p=null;
 		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
-		p = (Persona)query.uniqueResult();
+		p = (Persona)query.uniqueResult();*/
 /*		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
@@ -56,7 +64,6 @@ public class DAOPersona implements IDAOPersona {
 
 		}*/
 		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
-		return p;
 	}
 
 	@Override
