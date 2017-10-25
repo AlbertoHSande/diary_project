@@ -29,7 +29,7 @@
 					</div>
 					<div align="center" class="info">
 						<div class="title" align="left"></div>
-						<div class="desc">${persona.nombre}${persona.apellido1}
+						<div class="desc">${persona.nombre} ${persona.apellido1}
 							${persona.apellido2}</div>
 						<div class="desc">${persona.dni}</div>
 						<div class="desc">${persona.fechaNacimiento}</div>
