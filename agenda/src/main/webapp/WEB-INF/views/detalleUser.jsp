@@ -8,7 +8,7 @@
 
 <head>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<meta charset="UTF-8">
+<meta charset="UTF-8"></meta>
 <link href="<c:url value='/resources/css/bootstrap.css' />"
 	rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/detalles.css' />"
@@ -39,6 +39,10 @@
                     <div class="desc">${persona.fechaNacimiento}</div>
                     <div class="desc">Telefonos</div>
                     
+                </div>
+                </div>
+                </div>
+                </div>
                 </div>
 	</main>
 </body>
