@@ -4,10 +4,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name = "telefonos")
@@ -22,45 +26,47 @@ public class Telefono implements Serializable {
 	@Column(name = "idtelefonos")
 	private int id;
 
-	@Column(name = "telefonos")
 	private String telefono;
-
-	private Persona persona;
-
+	
+	private Persona personas;
+	
 	public Telefono() {
-		super();
 	}
 
-	public Telefono(int id) {
-		super();
+	public Telefono(Persona personas, String telefono) {
+		this.personas = personas;
+		this.telefono = telefono;
+	}
+
+	@Id
+	@GeneratedValue(strategy = IDENTITY)
+
+	@Column(name = "idtelefonos", unique = true, nullable = false)
+	public Integer getIdtelefonos() {
+		return this.id;
+	}
+
+	public void setIdtelefonos(Integer id) {
 		this.id = id;
 	}
 
-	public int getId() {
-		return id;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idPersona")
+	public Persona getPersonas() {
+		return this.personas;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setPersonas(Persona personas) {
+		this.personas = personas;
 	}
 
+	@Column(name = "telefono", length = 45)
 	public String getTelefono() {
-		return telefono;
+		return this.telefono;
 	}
 
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
-	}
-
-
-	@ManyToOne
-	@JoinColumn(name="idPersona", nullable=false)
-	public Persona getPersona() {
-		return persona;
-	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
 	}
 
 	@Override
@@ -90,7 +96,7 @@ public class Telefono implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Telefono [id=" + id + ", telefono=" + telefono + ", idPersona=" + persona.toString() + "]";
+		return "Telefono [id=" + id + ", telefono=" + telefono + "]";
 	}
 
 }

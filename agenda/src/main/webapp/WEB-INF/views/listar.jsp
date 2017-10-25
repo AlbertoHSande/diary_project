@@ -36,8 +36,8 @@
                         </div>
                     </div>
                 </div>
+               <ul class="list-group" id="contact-list">
                <c:forEach var="persona" items="${persona}" varStatus="status">
-                <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
                             <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
@@ -47,14 +47,18 @@
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
-                            <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                            <span class="visible-xs"> <span class="text-muted">
+                            <c:forEach var="telefono" items="${persona.telefonoses}">
+                            	<c:out value="${telefono.telefono}" />
+                            </c:forEach>
+                            </span><br/></span>
                             <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
                             <span class="visible-xs"> <span class="text-muted">${persona}</span><br/></span>
                         </div>
                         <div class="clearfix"></div>
                     </li>
             	</c:forEach>
-                </ul>
+            	</ul>
             </div>
         </div>
 	</div>
