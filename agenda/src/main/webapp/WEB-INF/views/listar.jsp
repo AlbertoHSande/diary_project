@@ -11,7 +11,7 @@
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>LISTADO DE Personas</title>
+<title>Lisado de Agenda</title>
 </head>
 <body>
 <c:import url="menu.jsp"></c:import>  
