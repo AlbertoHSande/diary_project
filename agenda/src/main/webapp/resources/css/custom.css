@@ -1,7 +1,13 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
+html { height: 100%;
+	
+}
 body {
     padding: 30px 0px 60px;
+    min-height: 100%;
+    background-image: url("../images/fondoagenda.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .panel > .list-group .list-group-item:first-child {
     /*border-top: 1px solid rgb(204, 204, 204);*/
@@ -91,4 +97,17 @@ ul.c-controls li a:hover {
 .c-info {
     padding: 5px 10px;
     font-size: 1.25em;
+}
+.margin2r{
+	margin-top: 2rem;
+}
+.scroll{
+	overflow:auto;
+}
+
+.miagenda{
+	padding-top: 7%;
+}
+nav{
+
 }

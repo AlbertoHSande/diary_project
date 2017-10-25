@@ -13,7 +13,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body >
 
 	<%  
   ApplicationContextConfig a;
@@ -42,7 +42,7 @@ if(Utilidades.isNumeric(s)){
 	ps1.setString(1,s);  
 	ResultSet rs1=ps1.executeQuery(); 
 	while(rs1.next()){  
-	out.print(" NOMBRE: "+rs1.getString(2)+" APELLIDO1: "+rs1.getString(3)+" APELLIDO2: "+rs1.getString(4)+" DNI: "+rs1.getInt(5)+" F.NACIMIENTO: "+rs1.getDate(6));
+	out.print(" NOMBRE: "+"<a href='detallesUser?"+rs1.getInt(1)+"'>"+rs1.getString(2)+"</a> APELLIDO1: "+rs1.getString(3)+" APELLIDO2: "+rs1.getString(4)+" DNI: "+rs1.getInt(5)+" F.NACIMIENTO: "+rs1.getDate(6));
 	}  
 	
 }

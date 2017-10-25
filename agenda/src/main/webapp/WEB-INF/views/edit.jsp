@@ -19,11 +19,11 @@
 <body>
 	<div id="wrapper">
 		<div id="header">
-			<a href="/agenda">Volver</a>
+			<a href="./"><img src="<c:url value='/resources/images/atras.jpg' />" width=30px/></a>
 			<h1>Editar Persona</h1>
 		</div>
 		<div id="main">
-			<form action="save" method="post" modelAttribute="persona">
+			<form action="save" modelAttribute="persona" method="post">
 
 				<div class="form-group">
 					<input type="hidden" id="id" name="id" value="${persona.id}">
