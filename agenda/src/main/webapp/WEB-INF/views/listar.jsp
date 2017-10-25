@@ -7,39 +7,28 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="<c:url value="/resources/js/search.js" />"></script>
 <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/custom.css' />" rel="stylesheet"></link>
-<script src="<c:url value="/resources/js/search.js" />"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>Lisado de Agenda</title>
 </head>
 <body>
 <c:import url="menu.jsp"></c:import>  
 	<table border="1">
 	
-	<div class="container scroll">
+	<div class="container">
 
     <div class="row miagenda">
         <div class="col-xs-12 col-sm-offset-3 col-sm-6">
             <div class="panel panel-default">
                 <div class="panel-heading c-list">
-                <div class="col-sm-6 col-md-4">
-                <span class="title"><a href="">Contactos</a></span>
-                </div>
-                
-                 <div class="col-sm-6 col-md-3">
-                
-                </div>
-                
-                 <div class="col-sm-6 col-md-5">
-                 
+                    <span class="title"><a href="">Contactos</a></span>
                     <ul class="pull-right c-controls">
                         <li><a href="new" data-toggle="tooltip" data-placement="top" title="Add Contact"><i class="glyphicon glyphicon-plus"></i></a></li>
                         <li id="admin"><a  href="#" data-toggle="tooltip" data-placement="top" title="Admin"><i class="fa fa-cog"></i></a></li>
                         <li><a href="#" class="hide-search" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i class="fa fa-ellipsis-v"></i></a></li>
                     </ul>
-                </div>
-                    
-                   
                 </div>
                 <div class="row" style="display: none;">
                     <div class="col-xs-12">
@@ -52,7 +41,7 @@
                     </div>
                 </div>
                 <!-- Mostrar datos persona -->
-               <ul class="list-group" id="contact-list">
+                 <ul class="list-group" id="contact-list">
                <c:forEach var="persona" items="${persona}" varStatus="status">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
@@ -63,10 +52,7 @@
                             <span class="glyphicon glyphicon-map-marker text-muted c-info esconder" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs esconder"> <span class="text-muted esconder">5842 Hillcrest Rd</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info esconder" data-toggle="tooltip" title="(870) 288-4149"></span>
-                            <span class="visible-xs esconder"> <span class="text-muted ">
-                            <c:forEach var="telefono" items="${persona.telefonoses}">
-                            	<c:out value="${telefono.telefono}" />
-                            </c:forEach></span><br/></span>
+                            <span class="visible-xs esconder"> <span class="text-muted ">(870) 288-4149</span><br/></span>
                             <span class="fa fa-comments text-muted c-info esconder" data-toggle="tooltip" title="scott.stevens@example.com"></span>
                             <span class="visible-xs esconder"> <span class="text-muted esconder">${persona}</span><br/></span>
                             <div class="mostrar margin2r" >

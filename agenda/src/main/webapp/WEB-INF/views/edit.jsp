@@ -23,7 +23,7 @@
 			<h1>Editar Persona</h1>
 		</div>
 		<div id="main">
-			<form action="save" modelAttribute="persona" method="post">
+			<form action="save"  method="post">
 
 				<div class="form-group">
 					<input type="hidden" id="id" name="id" value="${persona.id}">
