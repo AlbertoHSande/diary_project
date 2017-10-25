@@ -8,7 +8,6 @@
 
 <head>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<meta charset="UTF-8"></meta>
 <link href="<c:url value='/resources/css/bootstrap.css' />"
 	rel="stylesheet"></link>
 <link href="<c:url value='/resources/css/detalles.css' />"
@@ -18,32 +17,28 @@
 </head>
 
 <body>
-<c:import url="menu.jsp"></c:import>  
-	<main>
+	<c:import url="menu.jsp"></c:import>
 	<div class="container">
-	<div class="row miagenda">
-		<div class="col-lg-12 col-sm-12">
+		<div class="row miagenda">
+			<div class="col-lg-12 col-sm-12">
 
-            <div class="card hovercard">
-                <div class="cardheader">
+				<div class="card hovercard">
+					<div class="cardheader"></div>
+					<div class="avatar">
+						<img alt="" src="<c:url value='/resources/images/antonio.jpg' />">
+					</div>
+					<div align="center" class="info">
+						<div class="title" align="left"></div>
+						<div class="desc">${persona.nombre}${persona.apellido1}
+							${persona.apellido2}</div>
+						<div class="desc">${persona.dni}</div>
+						<div class="desc">${persona.fechaNacimiento}</div>
+						<div class="desc">Telefonos</div>
 
-                </div>
-                <div class="avatar">
-                    <img alt="" src="<c:url value='/resources/images/antonio.jpg' />" >
-                </div>
-                <div align="center" class="info">
-                    <div class="title" align="left">
-                    </div>
-                    <div class="desc">${persona.nombre} ${persona.apellido1} ${persona.apellido2}</div>
-                    <div class="desc">${persona.dni}</div>
-                    <div class="desc">${persona.fechaNacimiento}</div>
-                    <div class="desc">Telefonos</div>
-                    
-                </div>
-                </div>
-                </div>
-                </div>
-                </div>
-	</main>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
