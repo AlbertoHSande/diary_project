@@ -8,45 +8,40 @@
 
 <head>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-<meta charset="UTF-8">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="<c:url value='/resources/css/bootstrap.css' />"
+	rel="stylesheet"></link>
+<link href="<c:url value='/resources/css/detalles.css' />"
+	rel="stylesheet"></link>
+
 <title>Detalle Persona</title>
 </head>
 
 <body>
-<nav><a href="./"><img src="<c:url value='/resources/images/atras.jpg' />" width=30px/></a></nav>
-	<main>
-	<h1 align="center">Detalle Personal</h1>
-	<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<c:import url="menu.jsp"></c:import>
 	<div class="container">
-		<h2>Datos Personales</h2>
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Nombre :</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Apellidos
-				:</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">DNI :</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">Fecha de
-				Nacimiento :</div>
-		</div>
-		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">${persona.nombre} </div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">${persona.apellido1}</div>
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">${persona.apellido2}</div>
-			</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">${persona.dni}</div>
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">${persona.fechaNacimiento}</div>
+		<div class="row miagenda">
+			<div class="col-lg-12 col-sm-12">
 
+				<div class="card hovercard">
+					<div class="cardheader"></div>
+					<div class="avatar">
+						<img alt="" src="<c:url value='/resources/images/antonio.jpg' />">
+					</div>
+					<div align="center" class="info">
+						<div class="title" align="left"></div>
+						<div class="desc">${persona.nombre} ${persona.apellido1}
+							${persona.apellido2}</div>
+						<div class="desc">${persona.dni}</div>
+						<div class="desc">${persona.fechaNacimiento}</div>
+						<c:forEach var="telefono" items="${persona.telefonoses}">
+							<div class="desc">Telefonos</div>
+                            <c:out value="${telefono.telefono}" />
+                        </c:forEach>
+
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	</section> </main>
 </body>
 </html>

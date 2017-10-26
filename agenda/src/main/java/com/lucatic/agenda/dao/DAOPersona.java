@@ -36,22 +36,21 @@ public class DAOPersona implements IDAOPersona {
 	//poner en las implementaciones de las interfaces
 	@Transactional
 	public Persona findById(int key) {
-
-		@SuppressWarnings("unchecked")
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.openSession();
 		Persona p = (Persona) session
-				.createCriteria(Persona.class)
-				.add(Restrictions.eq("id", key)).uniqueResult();
-		session.flush();
-		session.close();
+		.createCriteria(Persona.class)
+		.add(Restrictions.eq("id", key)).uniqueResult();
+		session.disconnect();
 		return p;
-
-		/*		Persona p=null;
+		
+/*		Persona p=null;
 		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
 		p = (Persona)query.uniqueResult();*/
-		/*		///creamos un array y metemos los resultados de la query
+/*		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
 		for (Object[] row : list) {
@@ -65,52 +64,59 @@ public class DAOPersona implements IDAOPersona {
 			p.setIdEmpleado((int) row[6]);
 
 		}*/
-
+		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
 	}
 
 	@Override
 	@Transactional
 	public List<Persona> findAll() {
-
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
 		List<Persona> listp = (List<Persona>) session
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		System.out.println("LISTANDO Personal:");
-		System.out.println(listp.toString());
-		session.flush();
-		session.close();
+System.out.println("LISTANDO Personal:");
+System.out.println(listp.toString());
+		session.disconnect();
 		return listp;
 
 	}
-
+	
 	@Override
 	@Transactional
 	public void saveOrUpdate(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
 		session.saveOrUpdate(persona);
 		session.flush();
-		session.close();
+		session.disconnect();
+		//session.close();
 	}
-	/*
+/*
 	@Override
 	public int insert(Persona ov) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	 */
+	*/
 
 	@Override
+	@Transactional
 	public void delete(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		session.delete(persona);
 		session.flush();
-		session.close();
+		session.disconnect();
+		//session.close();
 	}
 
-	/*	@Override
+/*	@Override
 	public int insert(Persona ov) {
 		// TODO Auto-generated method stub
 		return 0;
@@ -121,7 +127,7 @@ public class DAOPersona implements IDAOPersona {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	 */
+*/
 	/*	@Override
 	@Transactional
 	public List<Personas> findAll() {

@@ -37,17 +37,17 @@
 						Contact</a></li>
 
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
+<!-- 			<ul class="nav navbar-nav navbar-right" tabindex="3">
 				<li><a data-toggle="modal" data-target="#loginModal"><span
 						class="glyphicon glyphicon-log-in"></span> login</a></li>
-			</ul>
+			</ul> -->
 
 
 		</div>
 	</div>
 </nav>
 
-<div id="loginModal" class="modal fade" role="dialog">
+<!-- <div id="loginModal" class="modal fade" role="dialog" >
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -78,11 +78,11 @@
 						data-dismiss="modal">Cancel</button>
 				</form>
 			</div>
-			<!--
+			
             <div class="modal-footer">
                 <div style="padding:10px"></div>
             </div>
--->
+
 		</div>
 	</div>
-</div>
+</div> -->
