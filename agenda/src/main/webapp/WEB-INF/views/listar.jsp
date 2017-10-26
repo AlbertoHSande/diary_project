@@ -45,7 +45,7 @@
                <c:forEach var="persona" items="${persona}" varStatus="status">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
-                            <img src="<c:url value='/resources/images/antonio.jpg' />" alt="Scott Stevens" class="img-responsive img-circle" />
+                            <img src="<c:url value='/resources/images/antonio.jpg' />" alt="${persona.nombre}" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">
                            <span class="name"><a href="detalle?id=${persona.id}">${persona.nombre} ${persona.apellido1} ${persona.apellido2}</a></span><br/>

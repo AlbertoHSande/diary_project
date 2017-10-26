@@ -240,7 +240,14 @@ body {
     color: 0c0c0c;
     vertical-align: middle;
 }
-
+.card.hovercard .info .nombre {
+padding: 10px;   
+    overflow: hidden;
+    font-size: 40px;
+    line-height: 25px;
+    color: #428bbb;
+    text-overflow: ellipsis;
+}
 .card.hovercard .info .desc {
 padding: 10px;   
     overflow: hidden;
