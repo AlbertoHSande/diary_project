@@ -52,12 +52,12 @@
 
 				<div class="form-group">
 					<label for="fecha">Fecha:</label> <input type="date" value="${persona.fechaNacimiento}"
-						class="form-control" id="fecha" name="fecha" required="required">
+						class="form-control" id="fechaNacimiento" name="fechaNacimiento" required="required">
 				</div>
 
 				<div class="form-group">
 					<label for="idEmpleado">Dni:</label> <input type="text" value="${persona.idEmpleado}"
-						class="form-control" id="idEmpleado" name="idEmpleado" required="required">
+						class="form-control" id="idEmpleado" name="idEmpleado" required="required" hidden="true">
 				</div>
 
 				<button type="submit" class="btn btn-success">Agregar</button>
