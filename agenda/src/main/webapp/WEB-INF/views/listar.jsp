@@ -56,13 +56,13 @@
                <c:forEach var="persona" items="${persona}" varStatus="status">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
-                            <img src="<c:url value='/resources/images/antonio.jpg' />" alt="Scott Stevens" class="img-responsive img-circle" />
+                            <img src="<c:url value='/resources/images/antonio.jpg' />" alt="${persona.nombre}" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">
                            <span class="name"><a href="detalle?id=${persona.id}">${persona.nombre} ${persona.apellido1} ${persona.apellido2}</a></span><br/>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info esconder" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs esconder"> <span class="text-muted esconder">5842 Hillcrest Rd</span><br/></span>
-                            <span class="glyphicon glyphicon-earphone text-muted c-info esconder" data-toggle="tooltip" title="(870) 288-4149"></span>
+                            <span class="glyphicon glyphicon-earphone text-muted c-info esconder" data-toggle="tooltip" title="${persona.telefonoses[0].telefono}"></span>
                             <span class="visible-xs esconder"> <span class="text-muted ">
                             <c:forEach var="telefono" items="${persona.telefonoses}">
                             	<c:out value="${telefono.telefono}" />
