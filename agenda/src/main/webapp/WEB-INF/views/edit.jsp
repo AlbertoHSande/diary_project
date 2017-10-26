@@ -95,8 +95,8 @@
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="<c:out value="${telefono.telefono}" />" hidden="" class="form-control" id="telefono${count.index + 1}"
-								name="telefono${count.index + 1}" required="required">
+								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="<c:out value="${telefono.telefono}" />" hidden="" class="form-control" id="telefono${count.index}"
+								name="telefono${count.index}" required="required">
 						</div>
 					</div>
 				</div>

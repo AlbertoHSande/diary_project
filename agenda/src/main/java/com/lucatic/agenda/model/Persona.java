@@ -1,8 +1,10 @@
 package com.lucatic.agenda.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -29,7 +31,7 @@ public class Persona implements Serializable {
 	@Id
 	@Column(name = "idpersonas")
 	private int id;
-
+	
 	//private Set<Telefono> telefonos;
 	
 	private String nombre;
@@ -38,7 +40,7 @@ public class Persona implements Serializable {
 	private String dni;
 	private String fechaNacimiento;
 	@OneToMany(mappedBy = "personas")
-	private Set<Telefono> telefonoses = new HashSet<Telefono>(0);
+	private List<Telefono> telefonoses = new ArrayList<Telefono>();
 	private int idEmpleado;
 	
 	public Persona() {
@@ -52,7 +54,7 @@ public class Persona implements Serializable {
 		this.apellido1 = apellido1;
 	}
 	
-	public Persona(int id, String nombre, String apellido1, Set<Telefono> telefonoses) {
+	public Persona(int id, String nombre, String apellido1, List<Telefono> telefonoses) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -122,11 +124,11 @@ public class Persona implements Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "personas")
-	public Set<Telefono> getTelefonoses() {
+	public List<Telefono> getTelefonoses() {
 		return this.telefonoses;
 	}
 
-	public void setTelefonoses(Set<Telefono> telefonoses) {
+	public void setTelefonoses(List<Telefono> telefonoses) {
 		this.telefonoses = telefonoses;
 	}
 	
