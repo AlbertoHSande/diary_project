@@ -36,12 +36,13 @@ public class DAOPersona implements IDAOPersona {
 	//poner en las implementaciones de las interfaces
 	@Transactional
 	public Persona findById(int key) {
-
-		@SuppressWarnings("unchecked")
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.openSession();
 		Persona p = (Persona) session
 		.createCriteria(Persona.class)
 		.add(Restrictions.eq("id", key)).uniqueResult();
+		session.disconnect();
 		return p;
 		
 /*		Persona p=null;
@@ -69,14 +70,16 @@ public class DAOPersona implements IDAOPersona {
 	@Override
 	@Transactional
 	public List<Persona> findAll() {
-
-
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
-		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
+		List<Persona> listp = (List<Persona>) session
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 System.out.println("LISTANDO Personal:");
 System.out.println(listp.toString());
+		session.disconnect();
 		return listp;
 
 	}
@@ -84,10 +87,14 @@ System.out.println(listp.toString());
 	@Override
 	@Transactional
 	public void saveOrUpdate(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
 		session.saveOrUpdate(persona);
 		session.flush();
+		session.disconnect();
+		//session.close();
 	}
 /*
 	@Override
@@ -98,10 +105,15 @@ System.out.println(listp.toString());
 	*/
 
 	@Override
+	@Transactional
 	public void delete(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		session.delete(persona);
 		session.flush();
+		session.disconnect();
+		//session.close();
 	}
 
 /*	@Override
