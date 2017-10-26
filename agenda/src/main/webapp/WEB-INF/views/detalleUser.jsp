@@ -33,7 +33,10 @@
 							${persona.apellido2}</div>
 						<div class="desc">${persona.dni}</div>
 						<div class="desc">${persona.fechaNacimiento}</div>
-						<div class="desc">Telefonos</div>
+						<c:forEach var="telefono" items="${persona.telefonoses}">
+							<div class="desc">Telefonos</div>
+                            <c:out value="${telefono.telefono}" />
+                        </c:forEach>
 
 					</div>
 				</div>
