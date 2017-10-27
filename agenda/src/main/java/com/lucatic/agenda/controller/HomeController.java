@@ -39,7 +39,7 @@ public class HomeController {
 	public ModelAndView view_Agregar_Persona() {
 		//Redirige a nueva persona(no crea)
 		ModelAndView model = new ModelAndView("agregar_persona");
-		return model;		
+		return model;
 	}
 	
 	@RequestMapping(value = "/busca", method = RequestMethod.GET)
@@ -59,7 +59,6 @@ public class HomeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 		//Agregar Personi
 	public ModelAndView savePersona(@ModelAttribute Persona persona) {
-		System.out.println("En el SAveEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		System.out.println(persona.toString());
 		PersonaService.saveOrUpdate(persona);
 		return new ModelAndView("redirect:/");
@@ -83,12 +82,14 @@ public class HomeController {
 		return model;
 	}
 	
+	
 	@RequestMapping("/delete")
-	public ModelAndView deletePersona(@RequestParam("id") int id) {
-	    Persona persona = PersonaService.get(id);
-	    PersonaService.delete(persona);
-	    return new ModelAndView("redirect:/");
+	public ModelAndView deletePersona(@ModelAttribute Persona persona) {
+		//Persona persona = PersonaService.get(id);
+		PersonaService.delete(persona);
+		return new ModelAndView("redirect:/");
 	}
+	
 //	@Autowired
 //	private UserService userService;
 /*

@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,12 +36,20 @@ public class DAOPersona implements IDAOPersona {
 	//poner en las implementaciones de las interfaces
 	@Transactional
 	public Persona findById(int key) {
-
-		Persona p=null;
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.openSession();
+		Persona p = (Persona) session
+		.createCriteria(Persona.class)
+		.add(Restrictions.eq("id", key)).uniqueResult();
+		session.disconnect();
+		return p;
+		
+/*		Persona p=null;
 		String hq1 ="FROM Persona WHERE id="+key;
 		Query query = sessionFactory.getCurrentSession().createQuery(hq1);
 
-		p = (Persona)query.uniqueResult();
+		p = (Persona)query.uniqueResult();*/
 /*		///creamos un array y metemos los resultados de la query
 		List<Object[]> list = query.list(); 
 
@@ -56,20 +65,21 @@ public class DAOPersona implements IDAOPersona {
 
 		}*/
 		//si todo va bien es posible que esto nos devuelva el objeto con toda la info de la tabla
-		return p;
 	}
 
 	@Override
 	@Transactional
 	public List<Persona> findAll() {
-
-
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
-		List<Persona> listp = (List<Persona>) sessionFactory.getCurrentSession()
+		List<Persona> listp = (List<Persona>) session
 		.createCriteria(Persona.class)
 		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
 System.out.println("LISTANDO Personal:");
 System.out.println(listp.toString());
+		session.disconnect();
 		return listp;
 
 	}
@@ -77,10 +87,14 @@ System.out.println(listp.toString());
 	@Override
 	@Transactional
 	public void saveOrUpdate(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
 		session.saveOrUpdate(persona);
 		session.flush();
+		session.disconnect();
+		//session.close();
 	}
 /*
 	@Override
@@ -91,11 +105,16 @@ System.out.println(listp.toString());
 	*/
 
 	@Override
+	@Transactional
 	public void delete(Persona persona) {
-		Session session = sessionFactory.openSession();
+		Session session = null;
+		session = sessionFactory.openSession();
+		//Session session = sessionFactory.getCurrentSession();
 		session.delete(persona);
 		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
 		session.flush();
+		session.disconnect();
+		//session.close();
 	}
 
 /*	@Override

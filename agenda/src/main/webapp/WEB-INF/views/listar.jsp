@@ -72,7 +72,7 @@
 											class="visible-xs esconder"> <span
 											class="text-muted esconder">5842 Hillcrest Rd</span><br /></span> <span
 											class="glyphicon glyphicon-earphone text-muted c-info esconder"
-											data-toggle="tooltip" title="(870) 288-4149"></span> <span
+											data-toggle="tooltip" title="${persona.telefonoses[0].telefono}"></span> <span
 											class="visible-xs esconder"> <span class="text-muted ">(870)
 												288-4149</span><br /></span> <span
 											class="fa fa-comments text-muted c-info esconder"
