@@ -94,6 +94,7 @@ System.out.println(listp.toString());
 	public void delete(Persona persona) {
 		Session session = sessionFactory.openSession();
 		session.delete(persona);
+		//sessionFactory.getCurrentSession().saveOrUpdate(persona);
 		session.flush();
 	}
 

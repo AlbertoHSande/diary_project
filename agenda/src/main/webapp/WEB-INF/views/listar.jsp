@@ -119,6 +119,7 @@
 			</tr>
 		</c:forEach> --%>
 		</table>
+		<%-- <c:import url="footer.jsp"></c:import> --%>
 	</div>
 
 
