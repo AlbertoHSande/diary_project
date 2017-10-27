@@ -30,7 +30,7 @@
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
 								class="form-control" id="nombre" name="nombre"
-								required="required" value="R2">
+								required="required" value="">
 						</div>
 					</div>
 				</div>
@@ -43,7 +43,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
-								value="RR" class="form-control" id="apellido1" name="apellido1"
+								value="" class="form-control" id="apellido1" name="apellido1"
 								required="required">
 						</div>
 					</div>
@@ -56,7 +56,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
-								value="RR" class="form-control" id="apellido2" name="apellido2"
+								value="" class="form-control" id="apellido2" name="apellido2"
 								required="required">
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-user"></i></span> <input type="text"
-								value="12Y" class="form-control" id="dni" name="dni"
+								value="" class="form-control" id="dni" name="dni"
 								required="required">
 						</div>
 					</div>

@@ -64,7 +64,7 @@
 				</div>
 				
 					<div class="form-group">
-					<label for="dni" class="col-md-4 control-label">dni</label>
+					<label for="dni" class="col-md-4 control-label">DNI</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
@@ -78,25 +78,26 @@
 
 
 				<div class="form-group">
-					<label for="fecha" class="col-md-4 control-label">fecha</label>
+					<label for="fecha" class="col-md-4 control-label">Fecha</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
 								class="glyphicon glyphicon-calendar"></i></span> <input type="date"
-								value="${persona.fechaNacimiento}" class="form-control" id="fecha" name="fecha"
+								value="${persona.fechaNacimiento}" class="form-control" id="fecha" name="fechaNacimiento"
 								required="required">
 						</div>
 					</div>
 				</div>
 				
 				<c:forEach var="telefono" items="${persona.telefonoses}" varStatus="count">
+				<input type="hidden" name="telefono[${count.index}].idtelefonos" value="${telefono.idtelefonos}">
 				<div class="form-group">
 					<label for="telefono" class="col-md-4 control-label">Teléfono</label>
 					<div class="col-md-4 inputGroupContainer">
 						<div class="input-group">
 							<span class="input-group-addon"><i
-								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="<c:out value="${telefono.telefono}" />" hidden="" class="form-control" id="telefono${count.index}"
-								name="telefono${count.index}" required="required">
+								class="glyphicon glyphicon-earphone"></i></span> <input type="text" value="<c:out value="${telefono.telefono}" />" hidden="" class="form-control" id="telefonoses[${count.index}].telefono"
+								name="telefono[${count.index}].telefono" required="required">
 						</div>
 					</div>
 				</div>
